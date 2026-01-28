@@ -1,0 +1,1001 @@
+phrase,intent,parameters
+Открой окно водителя на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 30}"
+"Пожалуйста, закройте заднее окно",window_set,"{""action"": ""close"", ""window"": ""rear""}"
+Приоткрой стекло у пассажира,window_set,"{""action"": ""open"", ""window"": ""passenger""}"
+Закрой все окна полностью,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Включи кондиционер на 20 градусов,ac_set,"{""state"": ""on"", ""temperature"": 20}"
+Выключи климат-контроль,ac_off,
+Поставь обдув на авто,ac_mode_set,"{""enabled"": true}"
+Увеличь скорость вентилятора до 75,ac_fan_set,"{""level"": 75, ""speed"": ""medium""}"
+Включи обогрев сиденья водителя на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Поставь обогрев сиденья пассажира на 50%,seat_heater_set,"{""seat"": ""passenger"", ""level"": 50}"
+Включи вентиляцию сиденья пассажира на 30,seat_vent_set,"{""seat"": ""passenger"", ""level"": 30}"
+Запусти навигацию до Красной площади,nav_start,"{""destination"": ""Красная площадь""}"
+Как мне доехать до ближайшей АЗС?,nav_start,"{""destination"": ""ближайшая АЗС""}"
+Отмени маршрут,nav_cancel,
+Позвони Алексею,call_start,"{""contact"": ""Алексей""}"
+Перезвони мне на номер 123456789,call_start,"{""contact"": ""123456789""}"
+Ответь на звонок,call_answer,
+Завершите текущий вызов,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Установи дворники на авто,wipers_set,"{""speed"": ""auto""}"
+Сделай громче на пять,volume_change,"{""delta"": 5}"
+Уменьши громкость на 10 процентов,volume_change,"{""delta"": -10}"
+Поставь громкость на 70,volume_set,"{""level"": 70}"
+Включи радио на частоте 92.5,radio_set,"{""frequency"": ""92.5""}"
+Переключи на следующий трек,next_track,
+Поставь трек на паузу,media_pause,
+"Привет, как дела?",chitchat,
+Какой сегодня день?,chitchat,
+"Сделай громче, пожалуйста",volume_change,"{""direction"": ""up""}"
+Включи шифрование музыки,media_shuffle_set,{}
+"Пожалуйста, выключи кондиционер",ac_off,
+Настрой радио на частоту 105.5,radio_set,"{""frequency"": ""105.5""}"
+Сделай немного потише,volume_change,"{""direction"": ""down""}"
+Открой окно у водителя на двадцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 20}"
+"Закрой все окна, пожалуйста",window_set,"{""action"": ""close"", ""window"": ""all""}"
+Приоткрой пассажирское стекло на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 30}"
+Сделай потише на десять,volume_change,"{""delta"": -10}"
+Увеличь громкость на 15,volume_change,"{""delta"": 15}"
+Поставь уровень громкости на 70 процентов,volume_set,"{""level"": 70}"
+Включи кондиционер на 24 градуса,ac_set,"{""state"": ""on"", ""temperature"": 24}"
+Выключи климат-контроль,ac_off,
+Установи обдув на авто,ac_mode_set,"{""enabled"": true}"
+Включи обогрев сиденья пассажира на 50,seat_heater_set,"{""seat"": ""passenger"", ""level"": 50}"
+Как проехать до Кремля?,nav_start,"{""destination"": ""Кремль""}"
+Отмени навигацию,nav_cancel,
+Позвони Васе,call_start,"{""contact"": ""Василий""}"
+Ответь на звонок,call_answer,
+Закрой люк,sunroof_close,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Установи уровень дворников на авто,wipers_set,"{""speed"": ""auto""}"
+Включи музыку,play_music,
+Поставь радио на частоту 98.5,radio_set,"{""frequency"": ""98.5""}"
+Как дела?,chitchat,
+Сделай потише на пятьдесят процентов,volume_change,"{""delta"": -50}"
+Включи рециркуляцию,ac_mode_set,"{""enabled"": true}"
+Выключи обогрев сиденья водителя,seat_heater_set,"{""seat"": ""driver"", ""level"": 0}"
+Переключи на следующий трек,next_track,
+Сделай громче на 20,volume_change,"{""delta"": 20}"
+Установи температуру на 18 градусов,ac_set,"{""state"": ""on"", ""temperature"": 18}"
+Включи дворники на высокой скорости,wipers_set,"{""speed"": ""high""}"
+Поставь музыку на паузу,media_pause,
+Включи звук на полную,volume_mute_set,"{""state"": ""off""}"
+Выключи кондиционер,ac_off,
+Сделай обдув на среднем уровне,ac_fan_set,"{""level"": 50, ""speed"": ""medium""}"
+Открой окно у водителя на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 30}"
+"Пожалуйста, закрой окно пассажира",window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Приоткрой окошко на заднем сиденье,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 10}"
+"Мне жарко, открой все окна",window_set,"{""action"": ""open"", ""window"": ""all""}"
+Закрой все окна полностью,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Включи кондиционер на 21 градус,ac_set,"{""state"": ""on"", ""temperature"": 21}"
+Выключи кондиционер,ac_off,
+Установи кондиционер на 16 градусов,ac_set,"{""state"": ""on"", ""temperature"": 16}"
+Включи рециркуляцию воздуха,ac_mode_set,"{""enabled"": true}"
+Выключи рециркуляцию,ac_mode_set,"{""enabled"": false}"
+Сделай громче на 10,volume_change,"{""delta"": 10}"
+Понизь громкость на 5 процентов,volume_change,"{""delta"": -5}"
+Уменьши звук,volume_change,"{""direction"": ""down""}"
+Поставь громкость на 50 процентов,volume_set,"{""level"": 50}"
+Сделай звук тише на двадцать,volume_change,"{""delta"": -20}"
+Включи радио на частоте 99.5,radio_set,"{""frequency"": ""99.5""}"
+Переключи на следующую песню,next_track,
+Останови музыку,stop_music,
+Переключи на AUX,media_source_set,"{""source"": ""aux""}"
+Как добраться до Красной площади?,nav_start,"{""destination"": ""Красная площадь""}"
+Отмени навигацию,nav_cancel,
+Позвони Анне,call_start,"{""contact"": ""Анна""}"
+Ответь на звонок,call_answer,
+Заканчивай звонок,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Включи обогрев стеклоочистителей на максимуме,wipers_set,"{""speed"": ""high""}"
+Установи обогрев сиденья на 80 процентов,seat_heater_set,"{""seat"": ""driver"", ""level"": 80}"
+Включи обогрев сиденья пассажира,seat_heater_set,"{""seat"": ""passenger"", ""level"": 100}"
+Выключи обогрев сидений,seat_heater_set,"{""seat"": ""driver"", ""level"": 0}"
+Включи стеклоочистители в авто режиме,rain_set,"{""mode"": ""auto""}"
+Привет,chitchat,
+Как дела?,chitchat,
+Чем занимаешься?,chitchat,
+Открой окно у водителя на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 30}"
+"Закрой пассажирское окно, пожалуйста",window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Приоткрой стекло сзади на половину,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 50}"
+Сделай температуру в кондиционере 20 градусов,ac_set,"{""temperature"": 20}"
+Включи климат-контроль,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Выключи кондиционер,ac_off,
+Включи обогрев сидения пассажира на максимум,seat_heater_set,"{""seat"": ""passenger"", ""level"": 100}"
+Сделай громкость на 10 процентов тише,volume_change,"{""delta"": -10}"
+Уменьши громкость,volume_change,"{""direction"": ""down""}"
+Поставь музыку погромче на 15,volume_change,"{""delta"": 15}"
+Запусти навигацию до ближайшего ресторана,nav_start,"{""destination"": ""ближайший ресторан""}"
+Как доехать до аэропорта?,nav_start,"{""destination"": ""аэропорт""}"
+Отмени навигацию,nav_cancel,
+Позвони Андрею,call_start,"{""contact"": ""Андрей""}"
+Прими входящий звонок,call_answer,
+Положи трубку,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Поставь дворники на среднюю скорость,wipers_set,"{""speed"": ""medium""}"
+Сделай свет ярче,volume_change,"{""delta"": 5}"
+"Привет, как дела?",chitchat,
+Как ты сегодня?,chitchat,
+Включи радио на 95.0,radio_set,"{""frequency"": ""95.0""}"
+Включи музыку,play_music,
+Останови музыку,stop_music,
+Следующий трек,next_track,
+Вернись на предыдущий трек,previous_track,
+Переключи на Bluetooth,media_source_set,"{""source"": ""bluetooth""}"
+Уменьши скорость вентилятора кондиционера,ac_fan_set,"{""speed"": ""low""}"
+Сделай уровень вентилятора на максимум,ac_fan_set,"{""level"": 100, ""speed"": ""high""}"
+Включи рециркуляцию,ac_mode_set,"{""enabled"": true}"
+Выключи рециркуляцию,ac_mode_set,"{""enabled"": false}"
+Закрой люк,sunroof_close,
+Приоткрой люк на 70 процентов,sunroof_set,"{""action"": ""open"", ""percent"": 70}"
+Открой люк на полную,sunroof_set,"{""action"": ""open"", ""percent"": 100}"
+Включи обогрев руля,wheel_heater_set,"{""state"": ""on""}"
+Выключи обогрев руля,wheel_heater_set,"{""state"": ""off""}"
+"Душно в машине, открой окно",window_set,"{""action"": ""open"", ""window"": ""all""}"
+Какой у нас план на сегодня?,chitchat,
+"Пожалуйста, сделай потише",volume_change,"{""direction"": ""down""}"
+Настрой радио на 100.0,radio_set,"{""frequency"": ""100.0""}"
+Открой окно у водителя,window_set,"{""action"": ""open"", ""window"": ""driver""}"
+Приоткрой стекло пассажира на двадцать процентов,window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 20}"
+Закрой все окна,window_set,"{""action"": ""close"", ""window"": ""all""}"
+"Пожалуйста, открой окошко",window_set,"{""action"": ""open"", ""window"": ""driver""}"
+Сделай температуру кондиционера 21 градус,ac_set,"{""temperature"": 21}"
+Включи кондиционер,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Отключи кондиционер,ac_off,
+Установи режим обдува,ac_mode_set,"{""enabled"": true}"
+Настрой вентилятор на высокую скорость,ac_fan_set,"{""level"": 100, ""speed"": ""high""}"
+Включи обогрев сиденья пассажира на 80 процентов,seat_heater_set,"{""seat"": ""passenger"", ""level"": 80}"
+Включи обогрев сиденья водителя,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи обдув заднего стекла,defrost_set,"{""state"": ""on"", ""target"": ""rear""}"
+Закрой люк полностью,sunroof_set,"{""action"": ""close"", ""percent"": 100}"
+Приоткрой люк на 50 процентов,sunroof_set,"{""action"": ""set"", ""percent"": 50}"
+Поставь радио на 102.5,radio_set,"{""frequency"": ""102.5""}"
+Включи музыку,play_music,
+Поставь на паузу,media_pause,
+Сделай громче на 10,volume_change,"{""delta"": 10}"
+Уменьши громкость на 15 процентов,volume_change,"{""delta"": -15}"
+Выбери источник USB,media_source_set,"{""source"": ""usb""}"
+Позвони Ивану,call_start,"{""contact"": ""Иван""}"
+Ответь на звонок,call_answer,
+Повесь трубку,call_hangup,
+Как доехать до торгового центра?,nav_start,"{""destination"": ""торговый центр""}"
+Отмени маршрут,nav_cancel,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Включи дальний свет,high_beam_set,"{""state"": ""on""}"
+Настрой дворники на авто,wipers_set,"{""speed"": ""auto""}"
+Как дела?,chitchat,
+Всё хорошо,chitchat,
+Приоткрой окно у водителя на двадцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 20}"
+Закрой окно пассажира полностью,window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Открой все окна на половину,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 50}"
+Сделай температуру в кондиционере 22 градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+"Включи кондиционер, пожалуйста",ac_set,"{""state"": ""on"", ""temperature"": 24}"
+Выключи кондиционер,ac_off,
+Поставь рециркуляцию в климате,ac_mode_set,"{""enabled"": true}"
+Сделай обдув на низкой скорости,ac_fan_set,"{""level"": 30, ""speed"": ""low""}"
+Включи обогрев сиденья пассажира на семьдесят процентов,seat_heater_set,"{""seat"": ""passenger"", ""level"": 70}"
+Выключи обогрев на водительском сиденье,seat_heater_set,"{""seat"": ""driver"", ""level"": 0}"
+Открой люк на тридцать процентов,sunroof_set,"{""action"": ""open"", ""percent"": 30}"
+Закрой люк,sunroof_close,
+Поставь радио на частоте 95.5,radio_set,"{""frequency"": ""95.5""}"
+Сделай громче на восемь,volume_change,"{""delta"": 8}"
+Уменьши громкость на десять,volume_change,"{""delta"": -10}"
+Переключи на следующий трек,next_track,
+"Стоп, музыка",stop_music,
+Включи Bluetooth,media_source_set,"{""source"": ""bluetooth""}"
+Как доехать до аэропорта?,nav_start,"{""destination"": ""аэропорт""}"
+Отмени навигацию,nav_cancel,
+Позвони Анне,call_start,"{""contact"": ""Анна""}"
+Ответь на звонок,call_answer,
+Заверши разговор,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Увеличь скорость дворников,wipers_set,"{""speed"": ""high""}"
+Включи обогрев руля,wheel_heater_set,"{""state"": ""on""}"
+Как дела?,chitchat,
+Что нового?,chitchat,
+Открой окно водителя на три четверти,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 75}"
+"Закрой окно у пассажира, пожалуйста",window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Сделай кондиционер потише,ac_fan_set,"{""level"": 30, ""speed"": ""low""}"
+Включи обогрев сиденья,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+"Привет, как дела?",chitchat,
+Поставь радио на 99.5,radio_set,"{""frequency"": ""99.5""}"
+Сделай громче на двадцать процентов,volume_change,"{""delta"": 20}"
+"Пожалуйста, включи кондиционер",ac_set,"{""state"": ""on"", ""temperature"": 21}"
+Открой люк на двадцать пять процентов,sunroof_set,"{""action"": ""open"", ""percent"": 25}"
+Как добраться до ближайшего кафе?,nav_start,"{""destination"": ""ближайшее кафе""}"
+Включи рециркуляцию,ac_mode_set,"{""enabled"": true}"
+"Пожалуйста, выключи музыку",stop_music,
+Закрой все окна,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Сделай звук тише на десять,volume_change,"{""delta"": -10}"
+Позвони Анне,call_start,"{""contact"": ""Анна""}"
+Выключи обогрев сиденья у пассажира,seat_heater_set,"{""seat"": ""passenger"", ""level"": 0}"
+Установи громкость на восемьдесят процентов,volume_set,"{""level"": 80}"
+Включи обогрев заднего стекла,defrost_set,"{""state"": ""on"", ""target"": ""rear""}"
+Как отключить навигацию?,nav_cancel,
+Переключи на следующий трек,next_track,
+Открой окно у водителя на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 30}"
+Закрой пассажирское окно,window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Приоткрой стекло сзади на половину,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 50}"
+Закрой все окна полностью,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Включи кондиционер на двадцать два градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Выключи кондиционер,ac_off,
+Установи обдув на авто,ac_mode_set,"{""enabled"": true}"
+Увеличь скорость вентилятора на сто процентов,ac_fan_set,"{""level"": 100, ""speed"": ""high""}"
+Включи обогрев сиденья пассажира на восемьдесят,seat_heater_set,"{""seat"": ""passenger"", ""level"": 80}"
+Сделай на сиденье водителя обогрев на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи вентилятор на сиденье водителя на шестьдесят процентов,seat_vent_set,"{""seat"": ""driver"", ""level"": 60}"
+Отключи рециркуляцию воздуха,ac_mode_set,"{""enabled"": false}"
+Включи обогрев лобового стекла,defrost_set,"{""state"": ""on"", ""target"": ""front""}"
+Выключи обогрев заднего стекла,defrost_set,"{""state"": ""off"", ""target"": ""rear""}"
+Открой люк на двадцать процентов,sunroof_set,"{""action"": ""open"", ""percent"": 20}"
+Закрой люк,sunroof_close,
+Сделай громче на десять,volume_change,"{""delta"": 10}"
+Уменьши громкость на пятнадцать,volume_change,"{""delta"": -15}"
+Поставь громкость на восемьдесят,volume_set,"{""level"": 80}"
+Включи режим повторения для всех треков,media_repeat_set,"{""mode"": ""all""}"
+Поставь радио на частоту 95.5,radio_set,"{""frequency"": ""95.5""}"
+Включи музыку,play_music,
+Приостанови воспроизведение,media_pause,
+Позвони Анне,call_start,"{""contact"": ""Анна""}"
+Ответь на звонок,call_answer,
+Заверши разговор,call_hangup,
+Как доехать до ТЦ?,nav_start,"{""destination"": ""ТЦ""}"
+Отмени навигацию,nav_cancel,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Установи скорость стеклоочистителей на авто,wipers_set,"{""speed"": ""auto""}"
+Включи ручной режим для дворников,rain_set,"{""mode"": ""manual""}"
+Как дела?,chitchat,
+Привет,chitchat,
+Как ты?,chitchat,
+Приоткрой окно водителя,window_set,"{""action"": ""open"", ""window"": ""driver""}"
+Закрой все окна,window_set,"{""action"": ""close"", ""window"": ""all""}"
+"Можно, пожалуйста, приоткрыть пассажирское окно на 30 процентов?",window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 30}"
+Сделай климат 22 градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Выключи кондиционер,ac_off,
+Включи рециркуляцию,ac_mode_set,"{""enabled"": true}"
+Поставь уровень вентилятора на 70 процентов,ac_fan_set,"{""level"": 70, ""speed"": ""medium""}"
+Включи обогрев сиденья пассажира на максимум,seat_heater_set,"{""seat"": ""passenger"", ""level"": 100}"
+Выключи обогрев сиденья,seat_heater_set,"{""seat"": ""driver"", ""level"": 0}"
+Открой люк на 50 процентов,sunroof_set,"{""action"": ""open"", ""percent"": 50}"
+Закрой люк,sunroof_close,
+Увеличь громкость на 10,volume_change,"{""delta"": 10}"
+Сделай потише на двадцать процентов,volume_change,"{""direction"": ""down""}"
+Задай уровень громкости на 75,volume_set,"{""level"": 75}"
+Выключи звук,volume_mute_set,"{""state"": ""on""}"
+Поставь музыку с USB,media_source_set,"{""source"": ""usb""}"
+Включи повтор трека,media_repeat_set,"{""mode"": ""one""}"
+Переключи на следующий трек,next_track,
+Как доехать до ближайшей заправки?,nav_start,"{""destination"": ""ближайшая заправка""}"
+Отмени маршрут,nav_cancel,
+Позвони маме,call_start,"{""contact"": ""мама""}"
+Ответь на звонок,call_answer,
+Заверши звонок,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Установи стеклоочистители на высокую скорость,wipers_set,"{""speed"": ""high""}"
+Включи режим дождя на автомате,rain_set,"{""mode"": ""auto""}"
+Привет,chitchat,
+Как дела?,chitchat,
+Приоткрой окно водителя на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 30}"
+"Открой все окна, пожалуйста",window_set,"{""action"": ""open"", ""window"": ""all""}"
+Закрой окно у пассажира полностью,window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Сделай кондиционер потеплее до двадцати двух градусов,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Выключи кондиционер,ac_off,
+Включи рециркуляцию воздуха,ac_mode_set,"{""enabled"": true}"
+Поставь уровень вентилятора на максималку,ac_fan_set,"{""level"": 100, ""speed"": ""high""}"
+Включи обогрев сиденья пассажира на восемьдесят процентов,seat_heater_set,"{""seat"": ""passenger"", ""level"": 80}"
+Выключи обогрев сидения водителя,seat_heater_set,"{""seat"": ""driver"", ""level"": 0}"
+Открой люк на двадцать процентов,sunroof_set,"{""action"": ""open"", ""percent"": 20}"
+Закрой люк,sunroof_close,
+Сделай громче на десять,volume_change,"{""delta"": 10}"
+Убавь громкость на восемь,volume_change,"{""delta"": -8}"
+Выключи звук,volume_mute_set,"{""state"": ""on""}"
+Сделай громкость на шестьдесят процентов,volume_set,"{""level"": 60}"
+Поставь радио на девяносто два целых пять,radio_set,"{""frequency"": ""92.5""}"
+Следующий трек,next_track,
+Вернись на предыдущий трек,previous_track,
+Запусти музыку,play_music,
+Останови воспроизведение,stop_music,
+Навигируй меня до станции метро,nav_start,"{""destination"": ""станция метро""}"
+Как добраться до Красной площади?,nav_start,"{""destination"": ""Красная площадь""}"
+Отмени маршрут,nav_cancel,
+Позвони Игорю,call_start,"{""contact"": ""Игорь""}"
+Ответь на звонок,call_answer,
+Сбрось вызов,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Установи дворники на авто,rain_set,"{""mode"": ""auto""}"
+Включи дворники на максимуме,wipers_set,"{""speed"": ""high""}"
+Привет,chitchat,
+Как дела?,chitchat,
+Что нового?,chitchat,
+Открой окно водителя на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 30}"
+Закрой заднее пассажирское окно,window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Приоткрой окошко,window_set,"{""action"": ""open"", ""window"": ""all""}"
+Включи кондиционер на двадцать градусов,ac_set,"{""state"": ""on"", ""temperature"": 20}"
+Выключи кондиционер,ac_off,
+Настрой кондиционер на двадцать пять градусов,ac_set,"{""state"": ""on"", ""temperature"": 25}"
+Включи рециркуляцию,ac_mode_set,"{""enabled"": true}"
+Увеличь скорость вентилятора до восьмидесяти процентов,ac_fan_set,"{""level"": 80, ""speed"": ""high""}"
+Включи обогрев сиденья водителя на тридцать процентов,seat_heater_set,"{""seat"": ""driver"", ""level"": 30}"
+Включи обогрев сиденья пассажира на сто процентов,seat_heater_set,"{""seat"": ""passenger"", ""level"": 100}"
+Открой люк на восемьдесят процентов,sunroof_set,"{""action"": ""open"", ""percent"": 80}"
+Закрой люк,sunroof_close,
+Включи дворники на низкой скорости,wipers_set,"{""speed"": ""low""}"
+Сделай музыку громче на десять,volume_change,"{""delta"": 10}"
+Поставь громкость на шестьдесят процентов,volume_set,"{""level"": 60}"
+Выключи звук,volume_mute_set,"{""state"": ""on""}"
+Начни проигрывать музыку,play_music,
+Поставь радио на восемьдесят семь и пять,radio_set,"{""frequency"": ""87.5""}"
+Как доехать до аэропорта?,nav_start,"{""destination"": ""аэропорт""}"
+Отмени маршрут,nav_cancel,
+Позвони маме,call_start,"{""contact"": ""мама""}"
+Ответь на звонок,call_answer,
+Положи трубку,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Как дела?,chitchat,
+"Душно в машине, открой стекло",window_set,"{""action"": ""open"", ""window"": ""all""}"
+Сделай громче на пятьдесят процентов,volume_change,"{""delta"": 50}"
+Включи музыку на всю катушку,play_music,
+Приоткрой окно у водителя на двадцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 20}"
+Закрой все окна,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Сделай кондиционер на тридцать градусов,ac_set,"{""state"": ""on"", ""temperature"": 30}"
+Выключи кондиционер,ac_off,
+Включи рециркуляцию воздуха,ac_mode_set,"{""enabled"": true}"
+Поставь обогрев сиденья пассажира на восемьдесят процентов,seat_heater_set,"{""seat"": ""passenger"", ""level"": 80}"
+Закрой люк полностью,sunroof_set,"{""action"": ""close"", ""percent"": 100}"
+Включи музыку,play_music,
+Сделай громче на пять,volume_change,"{""delta"": 5}"
+Поставь радио на 102.5,radio_set,"{""frequency"": ""102.5""}"
+Как доехать до аэропорта?,nav_start,"{""destination"": ""аэропорт""}"
+Позвони Андрею,call_start,"{""contact"": ""Андрей""}"
+"Можно, пожалуйста, уменьшить громкость?",volume_change,"{""direction"": ""down""}"
+Включи дворники на среднем уровне,wipers_set,"{""speed"": ""medium""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Как дела?,chitchat,
+Приоткрой стекло с пассажирской стороны,window_set,"{""action"": ""open"", ""window"": ""passenger""}"
+Сделай громкость на семьдесят процентов,volume_set,"{""level"": 70}"
+Установи кондиционер на 20 градусов,ac_set,"{""state"": ""on"", ""temperature"": 20}"
+Переключи на следующий трек,next_track,
+Открой окно водителя на пятнадцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 15}"
+"Закрой пассажирское окно полностью, пожалуйста",window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Приоткрой все окна на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 30}"
+Можно открыть стекло у водителя?,window_set,"{""action"": ""open"", ""window"": ""driver""}"
+Включи кондиционер на 22 градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Поставь температуру кондиционера на 18,ac_set,"{""state"": ""on"", ""temperature"": 18}"
+Выключи кондиционер,ac_off,
+Включи рециркуляцию,ac_mode_set,"{""enabled"": true}"
+Выключи обогрев сиденья пассажира,seat_heater_set,"{""seat"": ""passenger"", ""level"": 0}"
+Увеличь уровень обогрева сиденья водителя до 80,seat_heater_set,"{""seat"": ""driver"", ""level"": 80}"
+Включи обогрев сиденья на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Поставь вентилятор кондиционера на низкий уровень,ac_fan_set,"{""level"": 30, ""speed"": ""low""}"
+Сделай скорость вентилятора кондиционера высокой,ac_fan_set,"{""level"": 100, ""speed"": ""high""}"
+Включи задний обогрев,defrost_set,"{""state"": ""on"", ""target"": ""rear""}"
+Закрой люк на пятьдесят процентов,sunroof_set,"{""action"": ""close"", ""percent"": 50}"
+Открой люк,sunroof_set,"{""action"": ""open"", ""percent"": 100}"
+Поставь громкость на 70 процентов,volume_set,"{""level"": 70}"
+Сделай громче на десять,volume_change,"{""delta"": 10}"
+Уменьши громкость на пять,volume_change,"{""delta"": -5}"
+Выключи музыку,stop_music,
+Переключи на следующую песню,next_track,
+Поставь радио на частоте 101.2,radio_set,"{""frequency"": ""101.2""}"
+Начни навигацию до ближайшей заправки,nav_start,"{""destination"": ""ближайшая заправка""}"
+Как добраться до Кремля?,nav_start,"{""destination"": ""Кремль""}"
+Позвони Андрею,call_start,"{""contact"": ""Андрей""}"
+Ответь на звонок,call_answer,
+Заканчивай звонок,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Поставь фары на автомат,headlights_set,"{""state"": ""auto""}"
+Увеличь скорость дворников,wipers_set,"{""speed"": ""high""}"
+Как дела?,chitchat,
+Сколько времени?,chitchat,
+Приоткрой окно у водителя на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 30}"
+Закрой пассажирское окно,window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+"Пожалуйста, открой все окна",window_set,"{""action"": ""open"", ""window"": ""all""}"
+Закрой окошко сзади,window_set,"{""action"": ""close"", ""window"": ""rear""}"
+Сделай кондиционер на 20 градусов,ac_set,"{""state"": ""on"", ""temperature"": 20}"
+Включи климат-контроль и установи 22 градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Выключи кондиционер,ac_off,
+Сделай температуру в кондиционере 25,ac_set,"{""state"": ""on"", ""temperature"": 25}"
+Настрой обогрев сиденья водителя на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи обогрев сиденья пассажира на 50 процентов,seat_heater_set,"{""seat"": ""passenger"", ""level"": 50}"
+Выключи обогрев сиденья,seat_heater_set,"{""seat"": ""driver"", ""level"": 0}"
+Включи вентиляцию для водительского сидения,seat_vent_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи рециркуляцию в климат-контроле,ac_mode_set,"{""enabled"": true}"
+Выключи рециркуляцию,ac_mode_set,"{""enabled"": false}"
+Включи дворники на низкой скорости,wipers_set,"{""speed"": ""low""}"
+Включи дворники на авто,wipers_set,"{""speed"": ""auto""}"
+Выключи дворники,wipers_set,"{""speed"": ""off""}"
+Сделай громче на 10,volume_change,"{""delta"": 10}"
+Убавь громкость на 5,volume_change,"{""delta"": -5}"
+Установи громкость на 70 процентов,volume_set,"{""level"": 70}"
+Поставь радио на 99.5,radio_set,"{""frequency"": ""99.5""}"
+Слушай следующую композицию,next_track,
+Приостанови музыку,media_pause,
+"Пожалуйста, поставь источник на Bluetooth",media_source_set,"{""source"": ""bluetooth""}"
+Как доехать до ближайшего ресторана?,nav_start,"{""destination"": ""ближайший ресторан""}"
+Построй маршрут до дома,nav_start,"{""destination"": ""дом""}"
+Отмени навигацию,nav_cancel,
+Позвони Василию,call_start,"{""contact"": ""Василий""}"
+Ответь на звонок,call_answer,
+Заверши разговор,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Поставь фары на авто,headlights_set,"{""state"": ""auto""}"
+Выключи фары,headlights_set,"{""state"": ""off""}"
+"Привет, как дела?",chitchat,
+Как ты сегодня?,chitchat,
+Расскажи анекдот,chitchat,
+Закрой окно водителя,window_set,"{""action"": ""close"", ""window"": ""driver""}"
+"Пожалуйста, открой пассажирское окно на десять процентов",window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 10}"
+Приоткрой все окна на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 30}"
+Открой все стекла,window_set,"{""action"": ""open"", ""window"": ""all""}"
+Закрой окна полностью,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Включи кондиционер на двадцать два градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+"Выключи кондиционер, пожалуйста",ac_set,"{""state"": ""off""}"
+Настрой кондиционер на восемнадцать градусов,ac_set,"{""state"": ""on"", ""temperature"": 18}"
+Выключи климат-контроль,ac_off,
+Пусть кондиционер будет выключен,ac_off,
+Включи рециркуляцию воздуха,ac_mode_set,"{""enabled"": true}"
+Выключи обдув,ac_mode_set,"{""enabled"": false}"
+Увеличь скорость вентилятора на максимум,ac_fan_set,"{""level"": 100, ""speed"": ""high""}"
+Установи вентилятор на среднюю скорость,ac_fan_set,"{""level"": 50, ""speed"": ""medium""}"
+Включи обогрев сиденья водителя на восемьдесят процентов,seat_heater_set,"{""seat"": ""driver"", ""level"": 80}"
+Выключи обогрев сидений,seat_heater_set,"{""seat"": ""passenger"", ""level"": 0}"
+Включи вентиляцию для пассажира на двадцать пять,seat_vent_set,"{""seat"": ""passenger"", ""level"": 25}"
+Включи обдув для водителя на максимум,seat_vent_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи обогрев заднего стекла,defrost_set,"{""state"": ""on"", ""target"": ""rear""}"
+Выключи обогрев лобового стекла,defrost_set,"{""state"": ""off"", ""target"": ""front""}"
+Закрой люк полностью,sunroof_set,"{""action"": ""close"", ""percent"": 100}"
+Приоткрой люк на двадцать процентов,sunroof_set,"{""action"": ""open"", ""percent"": 20}"
+Выключи люк,sunroof_close,
+Включи музыку,play_music,
+Приостанови воспроизведение,media_pause,
+Останови музыку,stop_music,
+Следующий трек,next_track,
+Вернись на предыдущий трек,previous_track,
+Сделай громче на пять,volume_change,"{""delta"": 5}"
+Уменьши громкость на десять,volume_change,"{""delta"": -10}"
+Установи громкость на восемьдесят процентов,volume_set,"{""level"": 80}"
+Выключи звук,volume_mute_set,"{""state"": ""on""}"
+"Пожалуйста, отключи звук",volume_mute_set,"{""state"": ""off""}"
+Поставь радио на сто две,radio_set,"{""frequency"": ""102.0""}"
+Настрой радио на восемьдесят семь целых пять,radio_set,"{""frequency"": ""87.5""}"
+Включи Bluetooth,media_source_set,"{""source"": ""bluetooth""}"
+Поставь AUX,media_source_set,"{""source"": ""aux""}"
+Начни навигацию до дома,nav_start,"{""destination"": ""дом""}"
+Отмени навигацию,nav_cancel,
+Позвони Свете,call_start,"{""contact"": ""Света""}"
+Ответь на звонок,call_answer,
+Завершить вызов,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи фары,headlights_set,"{""state"": ""off""}"
+Пусть дворники работают на автомате,rain_set,"{""mode"": ""auto""}"
+Настрой дворники на медленную скорость,wipers_set,"{""speed"": ""low""}"
+"Привет, как дела?",chitchat,
+Как вы сегодня?,chitchat,
+Закрой окно у водителя,window_set,"{""action"": ""close"", ""window"": ""driver""}"
+Открой все окна на двадцать процентов,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 20}"
+Приоткрой стекло у пассажира,window_set,"{""action"": ""open"", ""window"": ""passenger""}"
+Закрой стекло полностью,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Сделай кондиционер на двадцать градусов,ac_set,"{""state"": ""on"", ""temperature"": 20}"
+Выключи кондиционер,ac_set,"{""state"": ""off""}"
+Поставь температуру на 22 градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Пусть кондиционер будет выключен,ac_off,
+Включи рециркуляцию,ac_mode_set,"{""enabled"": true}"
+Выключи обдув,ac_mode_set,"{""enabled"": false}"
+Включи вентилятор на высокую скорость,ac_fan_set,"{""level"": 100, ""speed"": ""high""}"
+Сделай вентилятор на минимуме,ac_fan_set,"{""level"": 0, ""speed"": ""low""}"
+Включи обогрев сиденья пассажира на 50 процентов,seat_heater_set,"{""seat"": ""passenger"", ""level"": 50}"
+Поставь обогрев для водителя на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи обогрев для водителя,seat_heater_set,"{""seat"": ""driver"", ""level"": 80}"
+Включи обогрев сиденья на 30,seat_heater_set,"{""seat"": ""passenger"", ""level"": 30}"
+Включи задний обогрев,defrost_set,"{""state"": ""on"", ""target"": ""rear""}"
+Выключи передний обогрев,defrost_set,"{""state"": ""off"", ""target"": ""front""}"
+Закрой люк на 70 процентов,sunroof_set,"{""action"": ""close"", ""percent"": 70}"
+Открой люк полностью,sunroof_set,"{""action"": ""open"", ""percent"": 100}"
+Закрой люк,sunroof_close,
+Запусти музыку,play_music,
+Останови музыку,stop_music,
+Приостанови воспроизведение,media_pause,
+Следующий трек,next_track,
+Назад на предыдущий трек,previous_track,
+Сделай громче на 10,volume_change,"{""delta"": 10}"
+Убавь звук на 5,volume_change,"{""delta"": -5}"
+Установи громкость на 75,volume_set,"{""level"": 75}"
+Выключи звук,volume_mute_set,"{""state"": ""on""}"
+Включи звук,volume_mute_set,"{""state"": ""off""}"
+Поставь радио на частоту 101.1,radio_set,"{""frequency"": ""101.1""}"
+Переключись на Bluetooth,media_source_set,"{""source"": ""bluetooth""}"
+Переключи на радио,media_source_set,"{""source"": ""radio""}"
+Как доехать до магазина?,nav_start,"{""destination"": ""магазин""}"
+Отмени маршрут,nav_cancel,
+Позвони маме,call_start,"{""contact"": ""мама""}"
+Ответь на звонок,call_answer,
+Заканчивай разговор,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи фары,headlights_set,"{""state"": ""off""}"
+Установи режим автоматических дворников,wipers_set,"{""speed"": ""auto""}"
+Переключи на ручной режим дворников,rain_set,"{""mode"": ""manual""}"
+"Привет, как дела?",chitchat,
+Что нового?,chitchat,
+Как у тебя дела?,chitchat,
+Приоткрой окно у водителя,window_set,"{""action"": ""open"", ""window"": ""driver""}"
+Закрой все окна,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Открой пассажирское стекло на сто процентов,window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 100}"
+Сделай кондиционер на двадцать два градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Выключи кондиционер,ac_off,
+Включи обогрев сидения пассажира на 50 процентов,seat_heater_set,"{""seat"": ""passenger"", ""level"": 50}"
+Сделай погромче на 10,volume_change,"{""delta"": 10}"
+Уменьши громкость на десять процентов,volume_change,"{""delta"": -10}"
+Поставь радио на 95.5,radio_set,"{""frequency"": ""95.5""}"
+Запусти навигацию до аэропорта,nav_start,"{""destination"": ""аэропорт""}"
+Как доехать до музея?,nav_start,"{""destination"": ""музей""}"
+Позвони Алексею,call_start,"{""contact"": ""Алексей""}"
+Отключи фары,headlights_set,"{""state"": ""off""}"
+Включи стеклоочистители на высокую скорость,wipers_set,"{""speed"": ""high""}"
+Увеличь громкость до 75%,volume_set,"{""level"": 75}"
+Сделай шторы закрытыми,sunroof_set,"{""action"": ""close"", ""percent"": 100}"
+Включи рециркуляцию воздуха,ac_mode_set,"{""enabled"": true}"
+Открой люк на 50 процентов,sunroof_set,"{""action"": ""open"", ""percent"": 50}"
+Отмени навигацию,nav_cancel,
+Выключи музыку,stop_music,
+Открой окно у водителя полностью,window_set,"{""action"": ""open"", ""window"": ""driver""}"
+Приоткрой стекло у пассажира на двадцать процентов,window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 20}"
+Закрой все окна,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Сделай кондиционер на 21 градус,ac_set,"{""state"": ""on"", ""temperature"": 21}"
+Выключи кондиционер,ac_off,
+Включи рециркуляцию воздуха,ac_mode_set,"{""enabled"": true}"
+Поставь вентилятор на среднюю скорость,ac_fan_set,"{""level"": 50, ""speed"": ""medium""}"
+"Сделай так, чтобы заднее стекло оттаивало",defrost_set,"{""state"": ""on"", ""target"": ""rear""}"
+Открой люк на тридцать процентов,sunroof_set,"{""action"": ""open"", ""percent"": 30}"
+Закрой люк,sunroof_close,
+"Поставь музыку, пожалуйста",play_music,
+Приостанови музыку,media_pause,
+Включи радио,play_music,
+Сделай громче на десять,volume_change,"{""delta"": 10}"
+Уменьши громкость на пятьдесят процентов,volume_change,"{""delta"": -50}"
+Настрой громкость на восемьдесят,volume_set,"{""level"": 80}"
+Включи бесшумный режим,volume_mute_set,"{""state"": ""on""}"
+Поставь Bluetooth как источник,media_source_set,"{""source"": ""bluetooth""}"
+Переключи на следующую песню,next_track,
+Найди станцию 102.5,radio_set,"{""frequency"": ""102.5""}"
+Как доехать до Кремля?,nav_start,"{""destination"": ""Кремль""}"
+Отмени навигацию,nav_cancel,
+Позвони Васе,call_start,"{""contact"": ""Вася""}"
+Ответь на звонок,call_answer,
+Заверши разговор,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Поставь дворники на авто,rain_set,"{""mode"": ""auto""}"
+Включи обогрев руля,wheel_heater_set,"{""state"": ""on""}"
+Как дела?,chitchat,
+Что нового?,chitchat,
+Жарко у нас в машине,chitchat,
+Приоткрой окно у водителя,window_set,"{""action"": ""open"", ""window"": ""driver""}"
+Закрой все окна на сто процентов,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Открой пассажирское окно на 30 процентов,window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 30}"
+Сделай кондиционер на 22 градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Выключи кондиционер,ac_set,"{""state"": ""off"", ""temperature"": 0}"
+Включи климат-контроль на 18 градусов,ac_set,"{""state"": ""on"", ""temperature"": 18}"
+Выключи климат,ac_off,
+Включи рециркуляцию,ac_mode_set,"{""enabled"": true}"
+Отключи обдув,ac_mode_set,"{""enabled"": false}"
+Поставь вентилятор на высокую скорость,ac_fan_set,"{""level"": 100, ""speed"": ""high""}"
+Сделай обогрев сидения пассажира на 50%,seat_heater_set,"{""seat"": ""passenger"", ""level"": 50}"
+Включи обогрев для водителя,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи вентилятор на 30%,seat_vent_set,"{""seat"": ""driver"", ""level"": 30}"
+Отключи обогрев сиденья,seat_heater_set,"{""seat"": ""passenger"", ""level"": 0}"
+Включи обогрев на 75% для пассажирского сидения,seat_heater_set,"{""seat"": ""passenger"", ""level"": 75}"
+Включи обогрев для сидения водителя,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи обогрев сидения на минимуме,seat_heater_set,"{""seat"": ""driver"", ""level"": 0}"
+Включи задний обогрев стекол,defrost_set,"{""state"": ""on"", ""target"": ""rear""}"
+Выключи передний обогрев стекол,defrost_set,"{""state"": ""off"", ""target"": ""front""}"
+Закрой люк,sunroof_close,
+Открой люк на 50 процентов,sunroof_set,"{""action"": ""open"", ""percent"": 50}"
+Закрой люк на 100 процентов,sunroof_set,"{""action"": ""close"", ""percent"": 100}"
+Поставь радио на частоту 91.5,radio_set,"{""frequency"": ""91.5""}"
+Сделай громче на 5,volume_change,"{""delta"": 5}"
+Снизь громкость на 20,volume_change,"{""delta"": -20}"
+Уменьши громкость,volume_change,"{""direction"": ""down""}"
+Увеличь громкость,volume_change,"{""direction"": ""up""}"
+Поставь уровень громкости на 70,volume_set,"{""level"": 70}"
+Сделай без звука,volume_mute_set,"{""state"": ""on""}"
+Включи звук,volume_mute_set,"{""state"": ""off""}"
+Переключи на Bluetooth,media_source_set,"{""source"": ""bluetooth""}"
+Включи музыку,play_music,
+Останови музыку,stop_music,
+Пауза для музыки,media_pause,
+Переключи на следующую песню,next_track,
+Вернись на предыдущую песню,previous_track,
+Включи случайное воспроизведение,media_shuffle_set,
+Повтори эту песню,media_repeat_set,"{""mode"": ""one""}"
+Выключи повтор,media_repeat_set,"{""mode"": ""off""}"
+Как добраться до станции метро?,nav_start,"{""destination"": ""станция метро""}"
+Отмени навигацию,nav_cancel,
+Позвони маме,call_start,"{""contact"": ""мама""}"
+Ответь на звонок,call_answer,
+Заверши разговор,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи фары,headlights_set,"{""state"": ""off""}"
+Поставь фары на автомат,headlights_set,"{""state"": ""auto""}"
+Включи дальний свет,high_beam_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Установи дворники на среднюю скорость,wipers_set,"{""speed"": ""medium""}"
+Выключи дворники,wipers_set,"{""speed"": ""off""}"
+Поставь дворники на авто,wipers_set,"{""speed"": ""auto""}"
+Сделай скорость дворников высокой,wipers_set,"{""speed"": ""high""}"
+Включи дождевик в ручном режиме,rain_set,"{""mode"": ""manual""}"
+Включи дождевик в автоматическом режиме,rain_set,"{""mode"": ""auto""}"
+Включи обогрев руля,wheel_heater_set,"{""state"": ""on""}"
+Выключи обогрев руля,wheel_heater_set,"{""state"": ""off""}"
+"Привет, как дела?",chitchat,
+Как у тебя дела?,chitchat,
+Что нового?,chitchat,
+Как проходит твой день?,chitchat,
+Привет!,chitchat,
+Приоткрой окно водителя,window_set,"{""action"": ""open"", ""window"": ""driver""}"
+Закрой все окна полностью,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Открой пассажирское стекло на половину,window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 50}"
+Включи кондиционер на 20 градусов,ac_set,"{""state"": ""on"", ""temperature"": 20}"
+"Пожалуйста, выключи кондиционер",ac_set,"{""state"": ""off""}"
+Давай поставим кондиционер на 18 градусов,ac_set,"{""state"": ""on"", ""temperature"": 18}"
+Выключи кондиционер,ac_off,
+Пусть кондиционер будет включен,ac_mode_set,"{""enabled"": true}"
+"Установи рециркуляцию, пожалуйста",ac_mode_set,"{""enabled"": false}"
+Увеличь скорость вентилятора на 50,ac_fan_set,"{""level"": 50, ""speed"": ""medium""}"
+Поставь обогрев сиденья на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи обогрев сидения пассажира,seat_heater_set,"{""seat"": ""passenger"", ""level"": 70}"
+"Сделай так, чтобы вентилятор сиденья работал на 30",seat_vent_set,"{""seat"": ""driver"", ""level"": 30}"
+Включи обогрев сидения на 60,seat_heater_set,"{""seat"": ""passenger"", ""level"": 60}"
+Включи обдув лобового стекла,defrost_set,"{""state"": ""on"", ""target"": ""front""}"
+Закрой обогрев заднего стекла,defrost_set,"{""state"": ""off"", ""target"": ""rear""}"
+Открой люк на 75 процентов,sunroof_set,"{""action"": ""open"", ""percent"": 75}"
+Закрой люк полностью,sunroof_close,
+Включи радио на частоте 100.5,radio_set,"{""frequency"": ""100.5""}"
+"Поставь станцию ""Европа Плюс""",radio_set_station,"{""station"": ""Европа Плюс""}"
+Сделай громче на десять,volume_change,"{""delta"": 10}"
+Уменьши громкость на пять процентов,volume_change,"{""delta"": -5}"
+Настрой громкость на 80,volume_set,"{""level"": 80}"
+Выключи звук,volume_mute_set,"{""state"": ""on""}"
+"Пожалуйста, переключи на Bluetooth",media_source_set,"{""source"": ""bluetooth""}"
+Останови музыку,stop_music,
+Запусти следующую песню,next_track,
+Как доехать до станции метро?,nav_start,"{""destination"": ""станция метро""}"
+Отмени навигацию,nav_cancel,
+Позвони маме,call_start,"{""contact"": ""мама""}"
+Ответь на звонок,call_answer,
+Заверши текущий звонок,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Установи дворники на авто,wipers_set,"{""speed"": ""auto""}"
+Сделай дождевую настройку ручной,rain_set,"{""mode"": ""manual""}"
+Как дела?,chitchat,
+"Привет, как ты?",chitchat,
+Сделай погромче,volume_change,"{""direction"": ""up""}"
+Сделай потише,volume_change,"{""direction"": ""down""}"
+Открой окно у водителя,window_set,"{""action"": ""open"", ""window"": ""driver""}"
+"Закрой заднее окно, пожалуйста",window_set,"{""action"": ""close"", ""window"": ""all""}"
+Приоткрой стекло пассажира на 25 процентов,window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 25}"
+Сделай кондиционер на 21 градус,ac_set,"{""state"": ""on"", ""temperature"": 21}"
+"Пожалуйста, выключи кондиционер",ac_off,
+Включи рециркуляцию,ac_mode_set,"{""enabled"": true}"
+Увеличь скорость вентилятора до 70%,ac_fan_set,"{""level"": 70, ""speed"": ""medium""}"
+Размори заднее стекло,defrost_set,"{""state"": ""on"", ""target"": ""rear""}"
+Закрой люк на 50 процентов,sunroof_set,"{""action"": ""close"", ""percent"": 50}"
+Включи музыку,play_music,
+Останови музыку,stop_music,
+Поставь громкость на 80,volume_set,"{""level"": 80}"
+Сделай тише на десять,volume_change,"{""delta"": -10}"
+Переключи на радио,media_source_set,"{""source"": ""radio""}"
+Как доехать до аэропорта?,nav_start,"{""destination"": ""аэропорт""}"
+Звони Алексею,call_start,"{""contact"": ""Алексей""}"
+Ответь на звонок,call_answer,
+Выключи фары,headlights_set,"{""state"": ""off""}"
+Установи дворники на автоматический режим,rain_set,"{""mode"": ""auto""}"
+"Привет, как дела?",chitchat,
+Сделай громче на 5,volume_change,"{""delta"": 5}"
+"Пожалуйста, включи обогрев сиденья водителя",seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Закрой окно на 75 процентов,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 75}"
+Поставь кондиционер на 19 градусов,ac_set,"{""state"": ""on"", ""temperature"": 19}"
+Включи вентилятор на максимуме,ac_fan_set,"{""level"": 100, ""speed"": ""high""}"
+Сделай громче музыку,volume_change,"{""direction"": ""up""}"
+Приоткрой окно водителя немного,window_set,"{""action"": ""open"", ""window"": ""driver"", ""percent"": 20}"
+Закрой окно у пассажира,window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Открой все окна на сто процентов,window_set,"{""action"": ""open"", ""window"": ""all"", ""percent"": 100}"
+Сделай холоднее на два градуса,ac_set,"{""state"": ""on"", ""temperature"": 18}"
+Включи кондиционер и выставь на двадцать три,ac_set,"{""state"": ""on"", ""temperature"": 23}"
+Выключи кондиционер,ac_off,
+Включи рециркуляцию,ac_mode_set,"{""enabled"": true}"
+Сделай обдув сильнее,ac_fan_set,"{""level"": 70, ""speed"": ""high""}"
+Поставь обогрев сиденья на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Открой люк на тридцать процентов,sunroof_set,"{""action"": ""open"", ""percent"": 30}"
+Закрой люк,sunroof_close,
+Включи музыку,play_music,
+Останови музыку,stop_music,
+Переключи на следующую песню,next_track,
+Сделай громче на восемь,volume_change,"{""delta"": 8}"
+Убавь громкость на десять процентов,volume_change,"{""delta"": -10}"
+Поставь громкость на пятьдесят,volume_set,"{""level"": 50}"
+Поставь радиостанцию на 95.0,radio_set,"{""frequency"": ""95.0""}"
+Как доехать до Лужников?,nav_start,"{""destination"": ""Лужники""}"
+Позвони Анне,call_start,"{""contact"": ""Анна""}"
+Ответь на звонок,call_answer,
+Выключи фары,headlights_set,"{""state"": ""off""}"
+Включи дворники на средней скорости,wipers_set,"{""speed"": ""medium""}"
+Как дела?,chitchat,
+"Привет, как ты?",chitchat,
+Открой окно водителя на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 30}"
+"Закрой пассажирское стекло, пожалуйста",window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Приоткрой все окна на половину,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 50}"
+Закрой окно сзади,window_set,"{""action"": ""close"", ""window"": ""rear""}"
+Включи кондиционер на 20 градусов,ac_set,"{""state"": ""on"", ""temperature"": 20}"
+"Пожалуйста, выключи климат-контроль",ac_off,
+Установи температуру кондиционера на 22 градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Включи рециркуляцию,ac_mode_set,"{""enabled"": true}"
+Сделай обдув сильнее,ac_fan_set,"{""level"": 70, ""speed"": ""high""}"
+Включи обогрев сиденья пассажира на 100,seat_heater_set,"{""seat"": ""passenger"", ""level"": 100}"
+Выключи обогрев сиденья водителя,seat_heater_set,"{""seat"": ""driver"", ""level"": 0}"
+Включи вентиляцию на сиденье,seat_vent_set,"{""seat"": ""driver"", ""level"": 50}"
+Включи обогрев на пассажирском сиденье,seat_heater_set,"{""seat"": ""passenger"", ""level"": 80}"
+Включи обогрев на сиденье водителя,seat_heater_set,"{""seat"": ""driver"", ""level"": 60}"
+Включи обогрев заднего стекла,defrost_set,"{""state"": ""on"", ""target"": ""rear""}"
+Выключи обогрев переднего стекла,defrost_set,"{""state"": ""off"", ""target"": ""front""}"
+Закрой люк,sunroof_close,
+Открой люк на 50 процентов,sunroof_set,"{""action"": ""open"", ""percent"": 50}"
+Сделай громче на 5,volume_change,"{""delta"": 5}"
+Сделай тише на 20 процентов,volume_change,"{""delta"": -20}"
+Увеличь громкость до 70,volume_set,"{""level"": 70}"
+Выключи звук,volume_mute_set,"{""state"": ""on""}"
+Переключи на радио,media_source_set,"{""source"": ""radio""}"
+Следующий трек,next_track,
+Останови музыку,stop_music,
+Позвони Алексею,call_start,"{""contact"": ""Алексей""}"
+Ответь на звонок,call_answer,
+Закончить разговор,call_hangup,
+Как проехать до центра города?,nav_start,"{""destination"": ""центр города""}"
+Отмени навигацию,nav_cancel,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Увеличь скорость дворников,wipers_set,"{""speed"": ""high""}"
+Установи дворники на авто,rain_set,"{""mode"": ""auto""}"
+Включи подогрев руля,wheel_heater_set,"{""state"": ""on""}"
+Привет,chitchat,
+Как дела?,chitchat,
+Что нового?,chitchat,
+"Пожалуйста, закрой окно у водителя",window_set,"{""action"": ""close"", ""window"": ""driver""}"
+Приоткрой стекло на заднем пассажирском сиденье,window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 30}"
+Открой все окна,window_set,"{""action"": ""open"", ""window"": ""all""}"
+Включи кондиционер на двадцать градусов,ac_set,"{""state"": ""on"", ""temperature"": 20}"
+Выключи климат-контроль,ac_off,
+Поставь кондиционер в режим рециркуляции,ac_mode_set,"{""enabled"": true}"
+Сделай температуру в машине 22 градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Включи обогрев сиденья пассажира,seat_heater_set,"{""seat"": ""passenger"", ""level"": 100}"
+Установи обогрев на 50 процентов для водительского сиденья,seat_heater_set,"{""seat"": ""driver"", ""level"": 50}"
+Поставь вентилятор на максимальную скорость,ac_fan_set,"{""level"": 100, ""speed"": ""high""}"
+Сделай громче на десять,volume_change,"{""delta"": 10}"
+Уменьши громкость на 15 процентов,volume_change,"{""delta"": -15}"
+Поставь громкость на 70,volume_set,"{""level"": 70}"
+Слушай музыку с USB,media_source_set,"{""source"": ""usb""}"
+Переключи на радиостанцию Маяк,radio_set_station,"{""station"": ""Маяк""}"
+Как добраться до аэропорта?,nav_start,"{""destination"": ""аэропорт""}"
+Запусти навигацию до Кремля,nav_start,"{""destination"": ""Кремль""}"
+"Привет, как дела?",chitchat,
+Позвони другу,call_start,"{""contact"": ""друг""}"
+Ответь на звонок,call_answer,
+Выключи фары,headlights_set,"{""state"": ""off""}"
+Включи дальний свет,high_beam_set,"{""state"": ""on""}"
+Установи стеклоочистители на авто,rain_set,"{""mode"": ""auto""}"
+Приоткрой окно у водителя,window_set,"{""action"": ""open"", ""window"": ""driver""}"
+Закрой все окна полностью,window_set,"{""action"": ""close"", ""window"": ""all""}"
+Открой окно пассажира на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 30}"
+"Сделай в машине немного прохладнее, включи кондиционер",ac_set,"{""state"": ""on"", ""temperature"": 20}"
+Выключи кондиционер,ac_off,
+Настрой кондиционер на 24 градуса,ac_set,"{""state"": ""on"", ""temperature"": 24}"
+Включи рециркуляцию воздуха,ac_mode_set,"{""enabled"": true}"
+Выключи рециркуляцию,ac_mode_set,"{""enabled"": false}"
+Увеличь скорость вентилятора до 70%,ac_fan_set,"{""level"": 70, ""speed"": ""high""}"
+Включи обогрев сиденья пассажира на полную мощность,seat_heater_set,"{""seat"": ""passenger"", ""level"": 100}"
+Уменьши обогрев сиденья водителя до 50%,seat_heater_set,"{""seat"": ""driver"", ""level"": 50}"
+Включи вентилятор для сиденья водителя на максимум,seat_vent_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи обогрев заднего стекла,defrost_set,"{""state"": ""on"", ""target"": ""rear""}"
+Закрой люк на 50 процентов,sunroof_set,"{""action"": ""close"", ""percent"": 50}"
+Открой люк,sunroof_set,"{""action"": ""open"", ""percent"": 100}"
+Закрой люк,sunroof_close,
+Включи радио на частоте 95.0,radio_set,"{""frequency"": ""95.0""}"
+Переключи на следующую песню,next_track,
+Останови музыку,stop_music,
+Уменьши громкость на пять,volume_change,"{""delta"": -5}"
+Сделай потише на десять процентов,volume_change,"{""direction"": ""down""}"
+Поставь громкость на 80 процентов,volume_set,"{""level"": 80}"
+Выключи звук,volume_mute_set,"{""state"": ""on""}"
+Вернись на прошлую песню,previous_track,
+Подключи источник USB,media_source_set,"{""source"": ""usb""}"
+Запусти музыку,play_music,
+Как добраться до Московского Кремля?,nav_start,"{""destination"": ""Московский Кремль""}"
+Отмени навигацию,nav_cancel,
+Позвони Алексею,call_start,"{""contact"": ""Алексей""}"
+Ответь на звонок,call_answer,
+Заверши вызов,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Установи дворники на среднюю скорость,wipers_set,"{""speed"": ""medium""}"
+Переключи дворники на авто,rain_set,"{""mode"": ""auto""}"
+Как дела?,chitchat,
+Пока!,chitchat,
+Приоткрой стекло у водителя на пятьдесят процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 50}"
+"Закрой окно пассажира полностью, пожалуйста",window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Открой все окна на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 30}"
+Закрой окно у водителя,window_set,"{""action"": ""close"", ""window"": ""driver""}"
+"Сделай так, чтобы окно пассажира было открыто на двадцать процентов",window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 20}"
+Включи кондиционер на двадцать два градуса,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+"Выключи кондиционер, пожалуйста",ac_off,
+Установи кондиционер на 25 градусов,ac_set,"{""state"": ""on"", ""temperature"": 25}"
+Включи рециркуляцию в кондиционере,ac_mode_set,"{""enabled"": true}"
+Убери кондиционер,ac_off,
+Поставь вентилятор на максимальную скорость,ac_fan_set,"{""level"": 100, ""speed"": ""high""}"
+Включи обогрев сидения водителя на полную мощность,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи вентилятор на сидении пассажира на тридцать процентов,seat_vent_set,"{""seat"": ""passenger"", ""level"": 30}"
+Включи обогрев сиденья пассажира,seat_heater_set,"{""seat"": ""passenger"", ""level"": 80}"
+Включи обогрев на сиденье водителя на 50 процентов,seat_heater_set,"{""seat"": ""driver"", ""level"": 50}"
+Закрой люк на половину,sunroof_set,"{""action"": ""set"", ""percent"": 50}"
+Закрой люк,sunroof_close,
+Включи радио на частоте 101.2,radio_set,"{""frequency"": ""101.2""}"
+Следующая песня,next_track,
+Сделай громче на 10,volume_change,"{""delta"": 10}"
+Поставь уровень громкости на 75,volume_set,"{""level"": 75}"
+Убавь громкость на 15,volume_change,"{""delta"": -15}"
+Включи Bluetooth,media_source_set,"{""source"": ""bluetooth""}"
+Как доехать до Эйфелевой башни?,nav_start,"{""destination"": ""Эйфелева башня""}"
+Отменить навигацию,nav_cancel,
+Позвони Алексею,call_start,"{""contact"": ""Алексей""}"
+Ответь на звонок,call_answer,
+Повесь трубку,call_hangup,
+Включи дальний свет,high_beam_set,"{""state"": ""on""}"
+Выключи фары,headlights_set,"{""state"": ""off""}"
+Включи дворники на низкой скорости,wipers_set,"{""speed"": ""low""}"
+Сделай дождь в режиме авто,rain_set,"{""mode"": ""auto""}"
+Привет,chitchat,
+Как дела?,chitchat,
+"Душно в машине, сделай холоднее",ac_set,"{""state"": ""on"", ""temperature"": 18}"
+Закрой окно водителя полностью,window_set,"{""action"": ""close"", ""window"": ""driver""}"
+Приоткрой пассажирское окно на двадцать процентов,window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 20}"
+Открой все окна на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 30}"
+"Пожалуйста, закрой окошко у водителя",window_set,"{""action"": ""close"", ""window"": ""driver""}"
+Сделай холоднее на два градуса,ac_set,"{""state"": ""on"", ""temperature"": 20}"
+Включи кондиционер на восемнадцать градусов,ac_set,"{""state"": ""on"", ""temperature"": 18}"
+Выключи кондиционер,ac_off,
+Поставь рециркуляцию включенной,ac_mode_set,"{""enabled"": true}"
+Увеличь скорость вентилятора до 70%,ac_fan_set,"{""level"": 70, ""speed"": ""medium""}"
+Включи обогрев сиденья водителя на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Установи обогрев сиденья пассажира на 50 процентов,seat_heater_set,"{""seat"": ""passenger"", ""level"": 50}"
+Включи вентилятор сиденья у пассажира на 30,seat_vent_set,"{""seat"": ""passenger"", ""level"": 30}"
+Выключи обогрев сиденья водителя,seat_heater_set,"{""seat"": ""driver"", ""level"": 0}"
+Включи обдув стекол,defrost_set,"{""state"": ""on"", ""target"": ""front""}"
+Выключи обогрев заднего стекла,defrost_set,"{""state"": ""off"", ""target"": ""rear""}"
+Открой люк на 50 процентов,sunroof_set,"{""action"": ""open"", ""percent"": 50}"
+Закрой люк полностью,sunroof_close,
+Поставь громкость на 70,volume_set,"{""level"": 70}"
+Сделай погромче на десять,volume_change,"{""delta"": 10}"
+Убавь громкость на 5 единиц,volume_change,"{""delta"": -5}"
+Поставь на без звука,volume_mute_set,"{""state"": ""on""}"
+Включи музыку,play_music,
+Останови музыку,stop_music,
+Следующий трек,next_track,
+Предыдущий трек,previous_track,
+Переключи на радио,media_source_set,"{""source"": ""radio""}"
+Поставь USB,media_source_set,"{""source"": ""usb""}"
+Как доехать до Кремля?,nav_start,"{""destination"": ""Кремль""}"
+Отмени навигацию,nav_cancel,
+Позвони другу,call_start,"{""contact"": ""друг""}"
+Ответь на звонок,call_answer,
+Заверши разговор,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи фары,headlights_set,"{""state"": ""off""}"
+Поставь на авто,headlights_set,"{""state"": ""auto""}"
+Включи дальний свет,high_beam_set,"{""state"": ""on""}"
+Выключи дальний свет,high_beam_set,"{""state"": ""off""}"
+Установи скорость дворников на авто,wipers_set,"{""speed"": ""auto""}"
+Включи дворники на высокой скорости,wipers_set,"{""speed"": ""high""}"
+Выключи дворники,wipers_set,"{""speed"": ""off""}"
+Как дела?,chitchat,
+"Привет, как ты?",chitchat,
+Что нового?,chitchat,
+Закрой стекло у пассажира полностью,window_set,"{""action"": ""close"", ""window"": ""passenger""}"
+Открой окно водителя на пятьдесят процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 50}"
+Приоткрой все окна на десять процентов,window_set,"{""action"": ""set"", ""window"": ""all"", ""percent"": 10}"
+Сделай кондиционер холоднее до 18 градусов,ac_set,"{""state"": ""on"", ""temperature"": 18}"
+Включи обогрев сиденья водителя на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи кондиционер и выставь на 22,ac_set,"{""state"": ""on"", ""temperature"": 22}"
+Выключи кондиционер,ac_off,
+Сделай потоки воздуха сильнее,ac_fan_set,"{""level"": 75, ""speed"": ""high""}"
+Настрой радио на частоту 95.5,radio_set,"{""frequency"": ""95.5""}"
+Поставь музыку на паузу,media_pause,
+Сделай погромче на восемь,volume_change,"{""delta"": 8}"
+Уменьши громкость на 15%,volume_change,"{""delta"": -15}"
+Переключи на следующий трек,next_track,
+Проведи поиск по маршруту до аэропорта,nav_start,"{""destination"": ""аэропорт""}"
+Как доехать до Красной площади?,nav_start,"{""destination"": ""Красная площадь""}"
+Перезвони мне на номер 123456789,call_start,"{""contact"": ""123456789""}"
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи дворники,wipers_set,"{""speed"": ""off""}"
+Закрой люк,sunroof_close,
+"Привет, как дела?",chitchat,
+Закрой все окна,window_set,"{""action"": ""close"", ""window"": ""all""}"
+"Пожалуйста, открой пассажирское окно на тридцать процентов",window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 30}"
+Приоткрой окно водителя,window_set,"{""action"": ""open"", ""window"": ""driver""}"
+"Сделай в салоне немного прохладнее, поставь кондиционер на 20 градусов",ac_set,"{""state"": ""on"", ""temperature"": 20}"
+Выключи кондиционер,ac_off,
+Включи рециркуляцию воздуха,ac_mode_set,"{""enabled"": true}"
+Поставь обдув на средний уровень,ac_fan_set,"{""level"": 50, ""speed"": ""medium""}"
+Разогрей сиденье пассажира на максимум,seat_heater_set,"{""seat"": ""passenger"", ""level"": 100}"
+Отключи обогрев сиденья водителя,seat_heater_set,"{""seat"": ""driver"", ""level"": 0}"
+Включи обогрев сидений,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Включи обогреватель заднего стекла,defrost_set,"{""state"": ""on"", ""target"": ""rear""}"
+Выключи обогрев переднего стекла,defrost_set,"{""state"": ""off"", ""target"": ""front""}"
+Закрой люк на половину,sunroof_set,"{""action"": ""set"", ""percent"": 50}"
+Полностью открой люк,sunroof_set,"{""action"": ""open"", ""percent"": 100}"
+Закрой люк,sunroof_close,
+Включи музыку,play_music,
+Приостанови музыку,media_pause,
+Переключи на следующий трек,next_track,
+Сделай громче на десять,volume_change,"{""delta"": 10}"
+Уменьши громкость на пять процентов,volume_change,"{""delta"": -5}"
+Поставь громкость на восемьдесят,volume_set,"{""level"": 80}"
+"Пожалуйста, сделай звук тише",volume_mute_set,"{""state"": ""on""}"
+Установи источник на USB,media_source_set,"{""source"": ""usb""}"
+Сделай режим воспроизведения на все,media_repeat_set,"{""mode"": ""all""}"
+Перемешай треки,media_shuffle_set,
+Слушай радио на частоте 102.5,radio_set,"{""frequency"": ""102.5""}"
+"Переключи на станцию ""Хит FM""",radio_set_station,"{""station"": ""Хит FM""}"
+"Навигатор, начни маршрут до дома",nav_start,"{""destination"": ""дом""}"
+Отмени навигацию,nav_cancel,
+Позвони Васе,call_start,"{""contact"": ""Вася""}"
+Ответь на звонок,call_answer,
+Заверши разговор,call_hangup,
+Включи фары,headlights_set,"{""state"": ""on""}"
+Выключи противотуманные фары,high_beam_set,"{""state"": ""off""}"
+Установи дворники на авто,wipers_set,"{""speed"": ""auto""}"
+Сделай режим дождя ручным,rain_set,"{""mode"": ""manual""}"
+Включи обогрев руля,wheel_heater_set,"{""state"": ""on""}"
+Как дела?,chitchat,
+"Привет, как поживаешь?",chitchat,
+Закрой окно у водителя,window_set,"{""action"": ""close"", ""window"": ""driver""}"
+Приоткрой стекло пассажира на тридцать процентов,window_set,"{""action"": ""set"", ""window"": ""passenger"", ""percent"": 30}"
+Открой все окна немного,window_set,"{""action"": ""open"", ""window"": ""all""}"
+Сделай кондиционер холоднее на два градуса,ac_set,"{""state"": ""on"", ""temperature"": 20}"
+Выключи кондиционер,ac_off,
+Включи обогрев сиденья для пассажира на средний уровень,seat_heater_set,"{""seat"": ""passenger"", ""level"": 50}"
+Добавь ещё двадцать процентов к вентилятору,ac_fan_set,"{""level"": 20, ""speed"": ""medium""}"
+Включи обдув стекла,ac_mode_set,"{""enabled"": true}"
+Сделай громче на пять,volume_change,"{""delta"": 5}"
+Уменьши громкость на десять процентов,volume_change,"{""delta"": -10}"
+Поставь на радио 94.5,radio_set,"{""frequency"": ""94.5""}"
+Включи следующее трек,next_track,
+Скажи стоп для музыки,stop_music,
+Как доехать до ВДНХ?,nav_start,"{""destination"": ""ВДНХ""}"
+Позвони моему другу на мобильный,call_start,"{""contact"": ""друг""}"
+Ответь на звонок,call_answer,
+Выключи фары,headlights_set,"{""state"": ""off""}"
+Поставь режим дождя на авто,rain_set,"{""mode"": ""auto""}"
+Закрой люк на полностью,sunroof_set,"{""action"": ""close"", ""percent"": 100}"
+Как дела?,chitchat,
+Приоткрой окно водителя на десять процентов,window_set,"{""action"": ""set"", ""window"": ""driver"", ""percent"": 10}"
+"Закрой все окна, пожалуйста",window_set,"{""action"": ""close"", ""window"": ""all""}"
+"Можно, пожалуйста, открыть пассажирское окно?",window_set,"{""action"": ""open"", ""window"": ""passenger""}"
+Поставь кондиционер на 20 градусов,ac_set,"{""state"": ""on"", ""temperature"": 20}"
+Выключи кондиционер,ac_off,
+Включи обогрев сидений на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": 100}"
+Увеличь громкость на пять,volume_change,"{""delta"": 5}"
+Сделай тише на десять процентов,volume_change,"{""delta"": -10}"
+Включи радио на частоте 101.5,radio_set,"{""frequency"": ""101.5""}"
+Поставь трек назад,previous_track,
+Начни навигацию до музея,nav_start,"{""destination"": ""музей""}"
+Как доехать до центра города?,nav_start,"{""destination"": ""центр города""}"
+"Позвони, пожалуйста, Андрею",call_start,"{""contact"": ""Андрей""}"
+Ответь на звонок,call_answer,
+Выключи фары,headlights_set,"{""state"": ""off""}"
