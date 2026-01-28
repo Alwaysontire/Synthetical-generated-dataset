@@ -6,7 +6,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from openai import OpenAI
 from pydantic import BaseModel
-from synt_gen.config.promt import OPENAI_API_KEY, SYSTEM_REQ
+from synt_gen.config.prompt import OPENAI_API_KEY, SYSTEM_REQ
 import random
 import argparse
 
