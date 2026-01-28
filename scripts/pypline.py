@@ -1,9 +1,12 @@
-import json, time, csv, os, re
+import json, time, csv, os, re, sys
 from typing import List, Dict, Tuple
-# import torch
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from openai import OpenAI
 from pydantic import BaseModel
-from key import OPENAI_API_KEY, SYSTEM_REQ
+from synt_gen.config.promt import OPENAI_API_KEY, SYSTEM_REQ
 import random
 import argparse
 
@@ -103,7 +106,6 @@ def call_model(client: OpenAI, model: str, temperature: float, top_p: float, see
     )
     text = response.choices[0].message.content.strip()
     result = extract_first_json(text)
-    # Ensure we return a list
     if isinstance(result, dict):
         return [result]
     return result
@@ -146,18 +148,18 @@ def generate_dataset(n: int,  model: str ="gpt-5-mini", temperature: float = 1.3
                     phrase_norm = normalize_phrase_dedup(item.phrase)
 
                     # if not item.intent:
-                    #     print(f"⚠ Skipping: empty intent")
+                    #     print(f" Skipping: empty intent")
                     #     continue
 
                     # if k in seen_keys:
-                    #     print(f"⚠ Duplicate intent+params: {item.intent}")
+                    #     print(f" Duplicate intent+params: {item.intent}")
                     #     continue
 
                     # if phrase_norm in seen_phrases:
-                    #     print(f"⚠ Duplicate phrase: {item.phrase}")
+                    #     print(f" Duplicate phrase: {item.phrase}")
                     #     continue
 
-                    # Add to results
+
                     seen_keys.add(k)
                     seen_phrases.add(phrase_norm)
                     results.append(item)
@@ -172,7 +174,7 @@ def generate_dataset(n: int,  model: str ="gpt-5-mini", temperature: float = 1.3
             print(f"⚠ API call failed (attempt {attempt}): {e}")
             if attempt >= max_tries:
                 print(f"❌ Max retries reached, continuing with {len(results)} items")
-            time.sleep(1)  # Brief pause before retry
+            time.sleep(1)  
             continue
 
     return results

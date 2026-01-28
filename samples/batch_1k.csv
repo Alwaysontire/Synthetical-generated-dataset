@@ -1,0 +1,101 @@
+phrase,intent,parameters
+Опусти переднее левое окно наполовину,window_set,"{""window"": ""front_left"", ""position"": ""50%""}"
+"Подними заднее правое, пожалуйста",window_set,"{""window"": ""rear_right"", ""position"": ""closed""}"
+Открой все окна — хочется проветрить,window_set,"{""window"": ""all"", ""position"": ""open""}"
+Закрой окно,window_set,"{""window"": ""any"", ""position"": ""closed""}"
+Приоткрой боковое окно чуть-чуть,window_set,"{""position"": ""slightly_open""}"
+Включи климат сейчас,ac_set,"{""state"": ""on""}"
+Сделай прохладнее на два градуса,ac_set,"{""delta_degrees"": -2}"
+Поставь кондиционер на 18,ac_set,"{""temperature"": 18}"
+Отключи A/C,ac_off,
+"Выключи кондиционер, жарко нестерпимо",ac_off,
+Режим вентиляции — авто,ac_mode_set,"{""mode"": ""auto""}"
+Включи экономный режим климата,ac_mode_set,"{""mode"": ""eco""}"
+Повысь скорость вентилятора на три ступени,ac_fan_set,"{""change"": 3}"
+Уменьши обдув до минимума,ac_fan_set,"{""level"": ""low""}"
+Нагрей кресло водителя на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": 3}"
+Подогрев сиденья пассажира на одну единицу,seat_heater_set,"{""seat"": ""passenger"", ""level"": 1}"
+"Вентиляцию сидений включи, пожалуйста",seat_vent_set,"{""state"": ""on""}"
+Охлади заднее левое кресло чуть,seat_vent_set,"{""seat"": ""rear_left"", ""state"": ""on"", ""level"": ""low""}"
+Включи обогрев лобового стекла,defrost_set,"{""side"": ""front"", ""state"": ""on""}"
+Убери обледенение на заднем стекле,defrost_set,"{""side"": ""rear"", ""state"": ""on""}"
+Приоткрой люк на пару сантиметров,sunroof_set,"{""state"": ""tilt"", ""position"": ""slight""}"
+Открой панорамный люк полностью,sunroof_set,"{""state"": ""open"", ""position"": ""100%""}"
+"Закрой люк, туда дует жаркий воздух",sunroof_close,
+Включи музыку,play_music,
+Стоп,stop_music,
+"Поставь на паузу, слышно шум шин",media_pause,
+"Следующая композиция, пожалуйста",next_track,
+Верни предыдущую песню,previous_track,
+Громче на пару делений,volume_change,"{""change"": ""up_2""}"
+Убавь звук на пять,volume_change,"{""change"": ""down_5""}"
+Сделай громкость двадцать процентов,volume_set,"{""level"": ""20%""}"
+Выключи звук,volume_mute_set,"{""mute"": true}"
+Переключи на Bluetooth,media_source_set,"{""source"": ""bluetooth""}"
+Поставь повтор песни,media_repeat_set,"{""mode"": ""one""}"
+Включи случайное воспроизведение,media_shuffle_set,"{""shuffle"": true}"
+Слушай радио FM,radio_set,"{""band"": ""FM""}"
+Настрой на станцию 101.2,radio_set_station,"{""frequency"": ""101.2""}"
+"Прокладывай маршрут в ближайший город, пожалуйста",nav_start,"{""destination"": ""nearest_city""}"
+Отмени навигацию,nav_cancel,
+Позвони Елене,call_start,"{""contact"": ""Елена""}"
+Ответь на звонок,call_answer,
+Сбрось вызов,call_hangup,
+Фары включи,headlights_set,"{""state"": ""on""}"
+Переключи дальний,high_beam_set,"{""state"": ""on""}"
+Помигай дальним,high_beam_set,"{""state"": ""flash""}"
+Дворники на интервальный режим,wipers_set,"{""mode"": ""intermittent""}"
+Увеличь скорость стеклоочистителей,wipers_set,"{""speed"": ""high""}"
+Включи режим дождя,rain_set,"{""state"": ""on""}"
+Отключи датчик дождя,rain_set,"{""sensor"": ""off""}"
+"Подогрей руль, пожалуйста",wheel_heater_set,"{""state"": ""on""}"
+Выключи подогрев руля,wheel_heater_set,"{""state"": ""off""}"
+Как далеко до следующего поворота?,chitchat,
+"Красиво сегодня — дорога петляет, жарко и тихо",chitchat,
+"Расскажи анекдот, чтобы не заскучать",chitchat,
+"Пока тихо, включи плейлист для спокойной езды",play_music,"{""mood"": ""calm_playlist""}"
+Нужно громче — прибавь до семидесяти процентов,volume_set,"{""level"": ""70%""}"
+Переключись на следующую радиостанцию,radio_set,
+Верни прежнюю радиостанцию,radio_set,
+Поставь джазовую станцию,play_music,"{""genre"": ""jazz""}"
+"Замолчи на секунду, пауза",media_pause,
+"Громче музыку, но не очень — +3",volume_change,"{""change"": ""up_3""}"
+Включи USB источник и проиграй альбом,media_source_set,"{""source"": ""USB"", ""action"": ""play_album""}"
+Повтори трек несколько раз,media_repeat_set,"{""mode"": ""repeat""}"
+Перемешай альбом пожалуйста,media_shuffle_set,
+Открой водительское окно наполовину,window_set,"{""window"": ""driver"", ""position"": ""50%""}"
+Закрой правое заднее стекло,window_set,"{""window"": ""rear_right"", ""position"": ""closed""}"
+Подними стекло пассажира,window_set,"{""window"": ""passenger"", ""position"": ""up""}"
+Опусти все окна,window_set,"{""window"": ""all"", ""position"": ""down""}"
+"Приоткрой стекла чуть-чуть, свежего воздуха хватит",window_set,"{""window"": ""multiple"", ""position"": ""slightly_open""}"
+Включи кондиционер,ac_set,
+Выключи климат-контроль пожалуйста,ac_off,
+Поставь температуру на двадцать два градуса,ac_set,"{""temperature"": 22, ""unit"": ""C""}"
+"Мне жарко, сделай кондиционер на 18",ac_set,"{""temperature"": 18, ""unit"": ""C""}"
+Переключи режим на рециркуляцию воздуха,ac_mode_set,"{""mode"": ""recirculation""}"
+"Пожалуйста, режим обогрева заднего стекла",ac_mode_set,"{""mode"": ""rear_defrost""}"
+Увеличь скорость вентилятора на три шага,ac_fan_set,"{""delta"": 3}"
+Уменьши вентилятор до минимального уровня,ac_fan_set,"{""level"": ""low""}"
+Выключи кондиционер и обогрев салона,ac_off,
+Включи подогрев водительского сиденья на максимум,seat_heater_set,"{""seat"": ""driver"", ""level"": ""high""}"
+Холодно на спине — включи вентиляцию кресла пассажира на слабый,seat_vent_set,"{""seat"": ""passenger"", ""level"": ""low""}"
+Поставь подогрев задних сидений на средний уровень,seat_heater_set,"{""seat"": ""rear"", ""level"": ""medium""}"
+Вентиляция кресла водителя выключена — включи её,seat_vent_set,"{""seat"": ""driver"", ""state"": ""on""}"
+Разморозь лобовое стекло сейчас,defrost_set,"{""target"": ""front_windshield"", ""state"": ""on""}"
+Включи обдув заднего стекла,defrost_set,"{""target"": ""rear_window"", ""state"": ""on""}"
+Открой люк на крыше полностью,sunroof_set,"{""position"": ""open"", ""amount"": ""100%""}"
+Шторку в крыше закрой,sunroof_close,"{""component"": ""shade"", ""state"": ""closed""}"
+Приоткрой панорамный люк на пару сантиметров,sunroof_set,"{""action"": ""tilt"", ""amount"": ""few_cm""}"
+"Поставь на паузу трек, пожалуйста",media_pause,
+Следующий трек,next_track,
+Предыдущая композиция,previous_track,
+Добавь громкость немного побольше,volume_change,"{""direction"": ""up"", ""amount"": ""small""}"
+Уменьши звук в салоне на семь делений,volume_change,"{""direction"": ""down"", ""amount"": 7}"
+Громкость на сорок процентов,volume_set,"{""level"": ""40%""}"
+Выключи звук полностью,volume_mute_set,"{""state"": ""mute""}"
+Переключись на USB,media_source_set,"{""source"": ""USB""}"
+Включи повтор альбома,media_repeat_set,"{""mode"": ""album""}"
+"Перемешай плейлист, пожалуйста",media_shuffle_set,"{""state"": ""on""}"
+Включи радиостанцию FM,radio_set,"{""band"": ""FM""}"
+Настрой радио на 103.5,radio_set_station,"{""frequency"": ""103.5""}"
+Найди станцию джаза и включи её,radio_set_station,"{""genre"": ""jazz""}"

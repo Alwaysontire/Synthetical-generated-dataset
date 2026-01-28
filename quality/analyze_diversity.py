@@ -1,31 +1,12 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Анализ разнообразия датасета для голосовых команд
-"""
-
 import pandas as pd
 import numpy as np
 from collections import Counter
 import re
 import json
 
-# Загрузка данных
 df = pd.read_csv('/Users/ilanizankovskij/Documents/vs_code/synt_gen/sample_10000.csv')
 
-print("=" * 80)
-print("АНАЛИЗ РАЗНООБРАЗИЯ ДАТАСЕТА")
-print("=" * 80)
-print(f"\nОбщее количество записей: {len(df)}")
 
-# ============================================================================
-# 1. БАЗОВАЯ СТАТИСТИКА
-# ============================================================================
-print("\n" + "=" * 80)
-print("1. БАЗОВАЯ СТАТИСТИКА")
-print("=" * 80)
-
-# Уникальные фразы
 unique_phrases = df['phrase'].nunique()
 total_phrases = len(df)
 duplicates = total_phrases - unique_phrases
@@ -35,14 +16,13 @@ print(f"\nУникальные фразы: {unique_phrases}")
 print(f"Дубликаты (полные совпадения): {duplicates}")
 print(f"Процент дубликатов: {duplication_rate:.2f}%")
 
-# Найти самые частые дубликаты
+
 phrase_counts = df['phrase'].value_counts()
 top_duplicates = phrase_counts[phrase_counts > 1].head(20)
 print(f"\nТОП-20 наиболее повторяющихся фраз:")
 for phrase, count in top_duplicates.items():
     print(f"  {count:4d}x: {phrase}")
 
-# Распределение по интентам
 print(f"\nТОП-10 самых частых интентов:")
 intent_counts = df['intent'].value_counts().head(10)
 for intent, count in intent_counts.items():

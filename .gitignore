@@ -1,0 +1,29 @@
+# Environment variables
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files (optional - раскомментируйте если не хотите коммитить датасеты)
+# data/generated/*.csv
+# data/backups/*.csv
+# analysis/*.json
