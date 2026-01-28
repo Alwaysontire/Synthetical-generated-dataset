@@ -7,7 +7,7 @@ import json
 import csv
 import re
 from collections import Counter
-from build_anchors import INTENTS
+from synt_gen.scripts.build_anchors import INTENTS
 
 
 def extract_from_batch(body: dict) -> str:

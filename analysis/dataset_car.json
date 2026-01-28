@@ -1,0 +1,1502 @@
+[
+  {
+    "phrase": "Открой окно водителя на половину",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"driver\", \"percent\": 50}"
+  },
+  {
+    "phrase": "Приоткрой переднее пассажирское стекло чуть-чуть",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"passenger\", \"percent\": 10}"
+  },
+  {
+    "phrase": "Опусти все окна полностью",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"all\", \"percent\": 100}"
+  },
+  {
+    "phrase": "Задвинь окно водителя",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"close\", \"window\": \"driver\", \"percent\": 0}"
+  },
+  {
+    "phrase": "Прикрой боковое окно пассажира процентов на двадцать",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"set\", \"window\": \"passenger\", \"percent\": 20}"
+  },
+  {
+    "phrase": "Распахни все окна немножко, пожалуйста",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"all\", \"percent\": 15}"
+  },
+  {
+    "phrase": "Закрой все окна, похолодало",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"close\", \"window\": \"all\", \"percent\": 0}"
+  },
+  {
+    "phrase": "Отодвинь стекло водителя наполовину",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"driver\", \"percent\": 50}"
+  },
+  {
+    "phrase": "Подними пассажирское окно на 0%",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"close\", \"window\": \"passenger\", \"percent\": 0}"
+  },
+  {
+    "phrase": "Можно открыть окно пассажира на 33 процента?",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"passenger\", \"percent\": 33}"
+  },
+  {
+    "phrase": "Врубай кондиционер и поставь 22 градуса",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 22}"
+  },
+  {
+    "phrase": "Кондей на 18, пожалуйста",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 18}"
+  },
+  {
+    "phrase": "Сделай температуру 24",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 24}"
+  },
+  {
+    "phrase": "Запусти климат на двадцать шесть",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 26}"
+  },
+  {
+    "phrase": "Поставь кондиционер на 19 градусов",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 19}"
+  },
+  {
+    "phrase": "Отключи климат",
+    "intent": "ac_off",
+    "parameters": ""
+  },
+  {
+    "phrase": "Отруби кондей",
+    "intent": "ac_off",
+    "parameters": ""
+  },
+  {
+    "phrase": "Кондёр выключи",
+    "intent": "ac_off",
+    "parameters": ""
+  },
+  {
+    "phrase": "Останови климат-контроль",
+    "intent": "ac_off",
+    "parameters": ""
+  },
+  {
+    "phrase": "Больше не нужно охлаждение",
+    "intent": "ac_off",
+    "parameters": ""
+  },
+  {
+    "phrase": "Включи рециркуляцию воздуха",
+    "intent": "ac_mode_set",
+    "parameters": "{\"enabled\": true}"
+  },
+  {
+    "phrase": "Выключи рециркуляцию",
+    "intent": "ac_mode_set",
+    "parameters": "{\"enabled\": false}"
+  },
+  {
+    "phrase": "Активируй обдув внутри салона",
+    "intent": "ac_mode_set",
+    "parameters": "{\"enabled\": true}"
+  },
+  {
+    "phrase": "Прекрати рециркулировать воздух",
+    "intent": "ac_mode_set",
+    "parameters": "{\"enabled\": false}"
+  },
+  {
+    "phrase": "Задействуй рециркуляцию, пожалуйста",
+    "intent": "ac_mode_set",
+    "parameters": "{\"enabled\": true}"
+  },
+  {
+    "phrase": "Убавь скорость вентилятора до трёх",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 30, \"speed\": \"low\"}"
+  },
+  {
+    "phrase": "Поставь вентилятор на максимум",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 100, \"speed\": \"high\"}"
+  },
+  {
+    "phrase": "Снизь обдув до средней мощности",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 50, \"speed\": \"medium\"}"
+  },
+  {
+    "phrase": "Установи вентилятор на 12 процентов",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 12, \"speed\": \"low\"}"
+  },
+  {
+    "phrase": "Немного посильнее обдув, на 68%",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 68, \"speed\": \"high\"}"
+  },
+  {
+    "phrase": "Включи подогрев водительского сиденья на пять",
+    "intent": "seat_heater_set",
+    "parameters": "{\"seat\": \"driver\", \"level\": 5}"
+  },
+  {
+    "phrase": "Сделай тёплее сиденье пассажира до 85%",
+    "intent": "seat_heater_set",
+    "parameters": "{\"seat\": \"passenger\", \"level\": 85}"
+  },
+  {
+    "phrase": "Накрути подогрев водителя на 33",
+    "intent": "seat_heater_set",
+    "parameters": "{\"seat\": \"driver\", \"level\": 33}"
+  },
+  {
+    "phrase": "Убери нагрев на пассажирском кресле",
+    "intent": "seat_heater_set",
+    "parameters": "{\"seat\": \"passenger\", \"level\": 0}"
+  },
+  {
+    "phrase": "Поставь тепло сиденья водителя на 22%",
+    "intent": "seat_heater_set",
+    "parameters": "{\"seat\": \"driver\", \"level\": 22}"
+  },
+  {
+    "phrase": "Охлади сиденье водителя на 12%",
+    "intent": "seat_vent_set",
+    "parameters": "{\"seat\": \"driver\", \"level\": 12}"
+  },
+  {
+    "phrase": "Включи вентиляцию сиденья пассажира на максимум",
+    "intent": "seat_vent_set",
+    "parameters": "{\"seat\": \"passenger\", \"level\": 100}"
+  },
+  {
+    "phrase": "Установи вентиляцию водительского кресла на 47 процентов",
+    "intent": "seat_vent_set",
+    "parameters": "{\"seat\": \"driver\", \"level\": 47}"
+  },
+  {
+    "phrase": "Выключи вентиляцию на пассажирском месте",
+    "intent": "seat_vent_set",
+    "parameters": "{\"seat\": \"passenger\", \"level\": 0}"
+  },
+  {
+    "phrase": "Включи обдув лобового стекла",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"on\", \"target\": \"front\"}"
+  },
+  {
+    "phrase": "Выключи подогрев заднего стекла",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"off\", \"target\": \"rear\"}"
+  },
+  {
+    "phrase": "Врубай дефрост на заднее окно",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"on\", \"target\": \"rear\"}"
+  },
+  {
+    "phrase": "Прекрати обогрев лобового",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"off\", \"target\": \"front\"}"
+  },
+  {
+    "phrase": "Приоткрой люк на четверть",
+    "intent": "sunroof_set",
+    "parameters": "{\"action\": \"open\", \"percent\": 25}"
+  },
+  {
+    "phrase": "Распахни панорамный люк полностью",
+    "intent": "sunroof_set",
+    "parameters": "{\"action\": \"open\", \"percent\": 100}"
+  },
+  {
+    "phrase": "Закрой люк полностью",
+    "intent": "sunroof_set",
+    "parameters": "{\"action\": \"close\", \"percent\": 0}"
+  },
+  {
+    "phrase": "Пожалуйста, прикрой люк на 50 процентов",
+    "intent": "sunroof_set",
+    "parameters": "{\"action\": \"close\", \"percent\": 50}"
+  },
+  {
+    "phrase": "Закрой люк",
+    "intent": "sunroof_close",
+    "parameters": ""
+  },
+  {
+    "phrase": "Играй музыку",
+    "intent": "play_music",
+    "parameters": ""
+  },
+  {
+    "phrase": "Врубай плейлист",
+    "intent": "play_music",
+    "parameters": ""
+  },
+  {
+    "phrase": "Останови музыку",
+    "intent": "stop_music",
+    "parameters": ""
+  },
+  {
+    "phrase": "Пауза",
+    "intent": "media_pause",
+    "parameters": ""
+  },
+  {
+    "phrase": "Следующая песня",
+    "intent": "next_track",
+    "parameters": ""
+  },
+  {
+    "phrase": "Назад трек",
+    "intent": "previous_track",
+    "parameters": ""
+  },
+  {
+    "phrase": "Громче на пять",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 5}"
+  },
+  {
+    "phrase": "Сбавь громкость на 7",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": -7}"
+  },
+  {
+    "phrase": "Прибавь звук на 12 единиц",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 12}"
+  },
+  {
+    "phrase": "Тише, на три",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": -3}"
+  },
+  {
+    "phrase": "Увеличь громкость на пятёрку, пожалуйста",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 5}"
+  },
+  {
+    "phrase": "Громкость 50 процентов",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 50}"
+  },
+  {
+    "phrase": "Поставь уровень звука на двадцать два",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 22}"
+  },
+  {
+    "phrase": "Звук сделай 85",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 85}"
+  },
+  {
+    "phrase": "Сделай громкость тридцать три",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 33}"
+  },
+  {
+    "phrase": "Заглуши звук",
+    "intent": "volume_mute_set",
+    "parameters": "{\"state\": \"on\"}"
+  },
+  {
+    "phrase": "Включи звук обратно",
+    "intent": "volume_mute_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Переключи на Bluetooth",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"bluetooth\"}"
+  },
+  {
+    "phrase": "Поставь радио как источник",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"radio\"}"
+  },
+  {
+    "phrase": "Давай USB",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"usb\"}"
+  },
+  {
+    "phrase": "Наладь AUX вход",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"aux\"}"
+  },
+  {
+    "phrase": "Включи повтор всех треков",
+    "intent": "media_repeat_set",
+    "parameters": "{\"mode\": \"all\"}"
+  },
+  {
+    "phrase": "Повтори только этот трек",
+    "intent": "media_repeat_set",
+    "parameters": "{\"mode\": \"one\"}"
+  },
+  {
+    "phrase": "Выключи режим повтора",
+    "intent": "media_repeat_set",
+    "parameters": "{\"mode\": \"off\"}"
+  },
+  {
+    "phrase": "Перемешивание треков включи",
+    "intent": "media_shuffle_set",
+    "parameters": ""
+  },
+  {
+    "phrase": "Переключи shuffle",
+    "intent": "media_shuffle_set",
+    "parameters": ""
+  },
+  {
+    "phrase": "Радио настрой на 101.2",
+    "intent": "radio_set",
+    "parameters": "{\"frequency\": \"101.2\"}"
+  },
+  {
+    "phrase": "Поставь частоту 87.5",
+    "intent": "radio_set",
+    "parameters": "{\"frequency\": \"87.5\"}"
+  },
+  {
+    "phrase": "Слушай 108.0",
+    "intent": "radio_set",
+    "parameters": "{\"frequency\": \"108.0\"}"
+  },
+  {
+    "phrase": "Включи радиостанцию Европа Плюс",
+    "intent": "radio_set_station",
+    "parameters": "{\"station\": \"Европа Плюс\"}"
+  },
+  {
+    "phrase": "Переключись на Эхо Москвы",
+    "intent": "radio_set_station",
+    "parameters": "{\"station\": \"Эхо Москвы\"}"
+  },
+  {
+    "phrase": "Поставь станцию Радио Шансон",
+    "intent": "radio_set_station",
+    "parameters": "{\"station\": \"Радио Шансон\"}"
+  },
+  {
+    "phrase": "Навигатор: проложи маршрут до супермаркета",
+    "intent": "nav_start",
+    "parameters": "{\"destination\": \"супермаркет\"}"
+  },
+  {
+    "phrase": "Поехали к дому родителей",
+    "intent": "nav_start",
+    "parameters": "{\"destination\": \"дом родителей\"}"
+  },
+  {
+    "phrase": "Построй маршрут к центральной площади",
+    "intent": "nav_start",
+    "parameters": "{\"destination\": \"центральная площадь\"}"
+  },
+  {
+    "phrase": "Отмени навигацию",
+    "intent": "nav_cancel",
+    "parameters": ""
+  },
+  {
+    "phrase": "Прекрати маршрут",
+    "intent": "nav_cancel",
+    "parameters": ""
+  },
+  {
+    "phrase": "Отмени прокладку пути, пожалуйста",
+    "intent": "nav_cancel",
+    "parameters": ""
+  },
+  {
+    "phrase": "Позвони маме",
+    "intent": "call_start",
+    "parameters": "{\"contact\": \"мама\"}"
+  },
+  {
+    "phrase": "Набери 84951234567",
+    "intent": "call_start",
+    "parameters": "{\"contact\": \"84951234567\"}"
+  },
+  {
+    "phrase": "Сделай звонок Саше",
+    "intent": "call_start",
+    "parameters": "{\"contact\": \"Саша\"}"
+  },
+  {
+    "phrase": "Ответь на звонок",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Алло",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Бери трубку",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Прими вызов, пожалуйста",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Подними",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Повесь трубку",
+    "intent": "call_hangup",
+    "parameters": ""
+  },
+  {
+    "phrase": "Закончи звонок",
+    "intent": "call_hangup",
+    "parameters": ""
+  },
+  {
+    "phrase": "Сбрось вызов",
+    "intent": "call_hangup",
+    "parameters": ""
+  },
+  {
+    "phrase": "Включи фары",
+    "intent": "headlights_set",
+    "parameters": "{\"state\": \"on\"}"
+  },
+  {
+    "phrase": "Вырубай фары",
+    "intent": "headlights_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Фары в авто в автомате поставь",
+    "intent": "headlights_set",
+    "parameters": "{\"state\": \"auto\"}"
+  },
+  {
+    "phrase": "Дальний свет врубай",
+    "intent": "high_beam_set",
+    "parameters": "{\"state\": \"on\"}"
+  },
+  {
+    "phrase": "Выключи дальний",
+    "intent": "high_beam_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Включайте ближний",
+    "intent": "high_beam_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Дворники на автомат",
+    "intent": "wipers_set",
+    "parameters": "{\"speed\": \"auto\"}"
+  },
+  {
+    "phrase": "Поставь дворники на средний режим",
+    "intent": "wipers_set",
+    "parameters": "{\"speed\": \"medium\"}"
+  },
+  {
+    "phrase": "Выключи дворники",
+    "intent": "wipers_set",
+    "parameters": "{\"speed\": \"off\"}"
+  },
+  {
+    "phrase": "Режим дождя автомат включи",
+    "intent": "rain_set",
+    "parameters": "{\"mode\": \"auto\"}"
+  },
+  {
+    "phrase": "Переключись на ручной режим дождя",
+    "intent": "rain_set",
+    "parameters": "{\"mode\": \"manual\"}"
+  },
+  {
+    "phrase": "Подогрев руля включи",
+    "intent": "wheel_heater_set",
+    "parameters": "{\"state\": \"on\"}"
+  },
+  {
+    "phrase": "Отключи нагрев колеса",
+    "intent": "wheel_heater_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Привет, как дела?",
+    "intent": "chitchat",
+    "parameters": ""
+  },
+  {
+    "phrase": "Спасибо",
+    "intent": "chitchat",
+    "parameters": ""
+  },
+  {
+    "phrase": "Кто хороший помощник?",
+    "intent": "chitchat",
+    "parameters": ""
+  },
+  {
+    "phrase": "Жарко тут, сделай пожалуйста прохладнее",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 20}"
+  },
+  {
+    "phrase": "Холодно, убавь на пару градусов",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 28}"
+  },
+  {
+    "phrase": "Сделай потише музыку, пожалуйста",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": -5}"
+  },
+  {
+    "phrase": "Громче!",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 8}"
+  },
+  {
+    "phrase": "Накинь к звуку десять",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 10}"
+  },
+  {
+    "phrase": "Понизь громкость до семи",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 7}"
+  },
+  {
+    "phrase": "Включи shuffle, пожалуйста",
+    "intent": "media_shuffle_set",
+    "parameters": ""
+  },
+  {
+    "phrase": "Выключи shuffle",
+    "intent": "media_shuffle_set",
+    "parameters": ""
+  },
+  {
+    "phrase": "Слушай новости на 99.5",
+    "intent": "radio_set",
+    "parameters": "{\"frequency\": \"99.5\"}"
+  },
+  {
+    "phrase": "Найди кофейню и проложи маршрут",
+    "intent": "nav_start",
+    "parameters": "{\"destination\": \"кофейня\"}"
+  },
+  {
+    "phrase": "Отмени маршрут к работе",
+    "intent": "nav_cancel",
+    "parameters": ""
+  },
+  {
+    "phrase": "Позвони в службу техподдержки 88001234567",
+    "intent": "call_start",
+    "parameters": "{\"contact\": \"88001234567\"}"
+  },
+  {
+    "phrase": "Набери офис компании",
+    "intent": "call_start",
+    "parameters": "{\"contact\": \"офис компании\"}"
+  },
+  {
+    "phrase": "Беру, отвечаю",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Давай, ответь",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Закончи разговор",
+    "intent": "call_hangup",
+    "parameters": ""
+  },
+  {
+    "phrase": "Пожалуйста, включи подогрев заднего стекла",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"on\", \"target\": \"rear\"}"
+  },
+  {
+    "phrase": "Останови подогрев заднего окна",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"off\", \"target\": \"rear\"}"
+  },
+  {
+    "phrase": "Блин, очень шумно — убавь громкость на двенадцать",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": -12}"
+  },
+  {
+    "phrase": "Можно потише музыку на 3?",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": -3}"
+  },
+  {
+    "phrase": "Сделай громче на пятнадцать",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 15}"
+  },
+  {
+    "phrase": "Уменьши звук до тридцати",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 30}"
+  },
+  {
+    "phrase": "Включи радио, переключись на Авторадио",
+    "intent": "radio_set_station",
+    "parameters": "{\"station\": \"Авторадио\"}"
+  },
+  {
+    "phrase": "Слушай Jazz FM",
+    "intent": "radio_set_station",
+    "parameters": "{\"station\": \"Jazz FM\"}"
+  },
+  {
+    "phrase": "Поставь обдув на низкую скорость",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 20, \"speed\": \"low\"}"
+  },
+  {
+    "phrase": "Дуй посильнее, 75 процентов",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 75, \"speed\": \"high\"}"
+  },
+  {
+    "phrase": "Переключи источник на Bluetooth смартфона",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"bluetooth\"}"
+  },
+  {
+    "phrase": "Пожалуйста, включи USB музыку",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"usb\"}"
+  },
+  {
+    "phrase": "Поставь громкость на ноль",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 0}"
+  },
+  {
+    "phrase": "Сделай звук на 92%",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 92}"
+  },
+  {
+    "phrase": "Подключи AUX вход",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"aux\"}"
+  },
+  {
+    "phrase": "Повтори мне последний трек",
+    "intent": "media_repeat_set",
+    "parameters": "{\"mode\": \"one\"}"
+  },
+  {
+    "phrase": "Открой окно водителя наполовину",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"driver\", \"percent\": 50}"
+  },
+  {
+    "phrase": "Приоткрой пассажирское окно чуть-чуть",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"passenger\", \"percent\": 10}"
+  },
+  {
+    "phrase": "Опусти все окна полностью",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"all\", \"percent\": 100}"
+  },
+  {
+    "phrase": "Закрой окно с пассажирской стороны",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"close\", \"window\": \"passenger\", \"percent\": 0}"
+  },
+  {
+    "phrase": "Прикрой окно водителя на 30%",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"set\", \"window\": \"driver\", \"percent\": 30}"
+  },
+  {
+    "phrase": "Захлопни все окна",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"close\", \"window\": \"all\", \"percent\": 0}"
+  },
+  {
+    "phrase": "Отодвинь пассажирское окно на половину",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"set\", \"window\": \"passenger\", \"percent\": 50}"
+  },
+  {
+    "phrase": "Распахни окно водителя полностью, пожалуйста",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"driver\", \"percent\": 100}"
+  },
+  {
+    "phrase": "Немного приоткрой левое окно",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"driver\", \"percent\": 15}"
+  },
+  {
+    "phrase": "Подними водительское окно (закрой)",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"close\", \"window\": \"driver\", \"percent\": 0}"
+  },
+  {
+    "phrase": "Включи кондиционер на 22 градуса",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 22}"
+  },
+  {
+    "phrase": "Запусти климат и поставь 19",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 19}"
+  },
+  {
+    "phrase": "Активируй кондей — 24°",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 24}"
+  },
+  {
+    "phrase": "Врубай охлаждение на 18 градусов",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 18}"
+  },
+  {
+    "phrase": "Задействуй климат-контроль, сделай 21",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 21}"
+  },
+  {
+    "phrase": "Выключи кондиционер",
+    "intent": "ac_off",
+    "parameters": ""
+  },
+  {
+    "phrase": "Отруби климат",
+    "intent": "ac_off",
+    "parameters": ""
+  },
+  {
+    "phrase": "Кондей отключи, пожалуйста",
+    "intent": "ac_off",
+    "parameters": ""
+  },
+  {
+    "phrase": "Останови климат-контроль",
+    "intent": "ac_off",
+    "parameters": ""
+  },
+  {
+    "phrase": "Деактивируй систему кондиционирования",
+    "intent": "ac_off",
+    "parameters": ""
+  },
+  {
+    "phrase": "Включи рециркуляцию",
+    "intent": "ac_mode_set",
+    "parameters": "{\"enabled\": true}"
+  },
+  {
+    "phrase": "Выруби рециркуляцию воздуха",
+    "intent": "ac_mode_set",
+    "parameters": "{\"enabled\": false}"
+  },
+  {
+    "phrase": "Активируй внутренний обдув",
+    "intent": "ac_mode_set",
+    "parameters": "{\"enabled\": true}"
+  },
+  {
+    "phrase": "Отключи рециркуляцию, пожалуйста",
+    "intent": "ac_mode_set",
+    "parameters": "{\"enabled\": false}"
+  },
+  {
+    "phrase": "Поставь вентилятор на средний уровень 40",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 40, \"speed\": \"medium\"}"
+  },
+  {
+    "phrase": "Увеличь силу обдува до 75",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 75, \"speed\": \"high\"}"
+  },
+  {
+    "phrase": "Понизь вентилятор до 15",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 15, \"speed\": \"low\"}"
+  },
+  {
+    "phrase": "Включи обдув на максимум",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 100, \"speed\": \"high\"}"
+  },
+  {
+    "phrase": "Поставь вентиляцию на ноль",
+    "intent": "ac_fan_set",
+    "parameters": "{\"level\": 0, \"speed\": \"low\"}"
+  },
+  {
+    "phrase": "Подогрей водительское сиденье на 3 деления",
+    "intent": "seat_heater_set",
+    "parameters": "{\"seat\": \"driver\", \"level\": 33}"
+  },
+  {
+    "phrase": "Включи подогрев пассажира на максимум",
+    "intent": "seat_heater_set",
+    "parameters": "{\"seat\": \"passenger\", \"level\": 100}"
+  },
+  {
+    "phrase": "Слегка прогрей кресло водителя — маленький уровень",
+    "intent": "seat_heater_set",
+    "parameters": "{\"seat\": \"driver\", \"level\": 10}"
+  },
+  {
+    "phrase": "Установи подогрев пассажира на 68",
+    "intent": "seat_heater_set",
+    "parameters": "{\"seat\": \"passenger\", \"level\": 68}"
+  },
+  {
+    "phrase": "Выключи обогрев сидений",
+    "intent": "seat_heater_set",
+    "parameters": "{\"seat\": \"driver\", \"level\": 0}"
+  },
+  {
+    "phrase": "Охлади кресло водителя вентилятором на 25",
+    "intent": "seat_vent_set",
+    "parameters": "{\"seat\": \"driver\", \"level\": 25}"
+  },
+  {
+    "phrase": "Включи вентиляцию пассажира пониже, на 5",
+    "intent": "seat_vent_set",
+    "parameters": "{\"seat\": \"passenger\", \"level\": 5}"
+  },
+  {
+    "phrase": "Максимально провентилируй водительское сиденье",
+    "intent": "seat_vent_set",
+    "parameters": "{\"seat\": \"driver\", \"level\": 100}"
+  },
+  {
+    "phrase": "Убавь вентиляцию пассажира до нуля",
+    "intent": "seat_vent_set",
+    "parameters": "{\"seat\": \"passenger\", \"level\": 0}"
+  },
+  {
+    "phrase": "Поставь вентиляцию водителя на 47",
+    "intent": "seat_vent_set",
+    "parameters": "{\"seat\": \"driver\", \"level\": 47}"
+  },
+  {
+    "phrase": "Включи обдув лобового стекла",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"on\", \"target\": \"front\"}"
+  },
+  {
+    "phrase": "Выключи обогрев заднего стекла",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"off\", \"target\": \"rear\"}"
+  },
+  {
+    "phrase": "Активируй дефрост фронтально",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"on\", \"target\": \"front\"}"
+  },
+  {
+    "phrase": "Прекрати работу обогрева заднего стекла",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"off\", \"target\": \"rear\"}"
+  },
+  {
+    "phrase": "Включи обдув на лобовое, пожалуйста",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"on\", \"target\": \"front\"}"
+  },
+  {
+    "phrase": "Сдвинь люк на 20%",
+    "intent": "sunroof_set",
+    "parameters": "{\"action\": \"open\", \"percent\": 20}"
+  },
+  {
+    "phrase": "Закрой панорамный люк",
+    "intent": "sunroof_set",
+    "parameters": "{\"action\": \"close\", \"percent\": 0}"
+  },
+  {
+    "phrase": "Открой люк полностью",
+    "intent": "sunroof_set",
+    "parameters": "{\"action\": \"open\", \"percent\": 100}"
+  },
+  {
+    "phrase": "Приоткрой люк слегка",
+    "intent": "sunroof_set",
+    "parameters": "{\"action\": \"open\", \"percent\": 10}"
+  },
+  {
+    "phrase": "Потом закроешь люк? Закрой сейчас",
+    "intent": "sunroof_close",
+    "parameters": ""
+  },
+  {
+    "phrase": "Пусти музыку",
+    "intent": "play_music",
+    "parameters": ""
+  },
+  {
+    "phrase": "Врубай треки",
+    "intent": "play_music",
+    "parameters": ""
+  },
+  {
+    "phrase": "Стоп музыка",
+    "intent": "stop_music",
+    "parameters": ""
+  },
+  {
+    "phrase": "Поставь паузу",
+    "intent": "media_pause",
+    "parameters": ""
+  },
+  {
+    "phrase": "Следующая песня пожалуйста",
+    "intent": "next_track",
+    "parameters": ""
+  },
+  {
+    "phrase": "Эй, назад трек",
+    "intent": "previous_track",
+    "parameters": ""
+  },
+  {
+    "phrase": "Громче на 5",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 5}"
+  },
+  {
+    "phrase": "Убавь звук на три пункта",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": -3}"
+  },
+  {
+    "phrase": "Добавь пятёрку к громкости",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 5}"
+  },
+  {
+    "phrase": "Сделай тише",
+    "intent": "volume_change",
+    "parameters": "{\"direction\": \"down\"}"
+  },
+  {
+    "phrase": "Громче",
+    "intent": "volume_change",
+    "parameters": "{\"direction\": \"up\"}"
+  },
+  {
+    "phrase": "Установи громкость на 12",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 12}"
+  },
+  {
+    "phrase": "Поставь звук 85 процентов",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 85}"
+  },
+  {
+    "phrase": "Громкость 33",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 33}"
+  },
+  {
+    "phrase": "Выключи звук полностью",
+    "intent": "volume_mute_set",
+    "parameters": "{\"state\": \"on\"}"
+  },
+  {
+    "phrase": "Отмени беззвучный режим",
+    "intent": "volume_mute_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Переключи на Bluetooth",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"bluetooth\"}"
+  },
+  {
+    "phrase": "Включи радио",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"radio\"}"
+  },
+  {
+    "phrase": "Подключи USB-плеер",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"usb\"}"
+  },
+  {
+    "phrase": "Поставь повтор на одну песню",
+    "intent": "media_repeat_set",
+    "parameters": "{\"mode\": \"one\"}"
+  },
+  {
+    "phrase": "Повтор выключи",
+    "intent": "media_repeat_set",
+    "parameters": "{\"mode\": \"off\"}"
+  },
+  {
+    "phrase": "Перемешай плейлист",
+    "intent": "media_shuffle_set",
+    "parameters": ""
+  },
+  {
+    "phrase": "Поставь частоту 99.7 FM",
+    "intent": "radio_set",
+    "parameters": "{\"frequency\": \"99.7\"}"
+  },
+  {
+    "phrase": "Переключись на станцию Ретро FM",
+    "intent": "radio_set_station",
+    "parameters": "{\"station\": \"Ретро FM\"}"
+  },
+  {
+    "phrase": "Поехали к ближайшей заправке",
+    "intent": "nav_start",
+    "parameters": "{\"destination\": \"ближайшая заправка\"}"
+  },
+  {
+    "phrase": "Проложи маршрут к дому",
+    "intent": "nav_start",
+    "parameters": "{\"destination\": \"дом\"}"
+  },
+  {
+    "phrase": "Отмени навигацию",
+    "intent": "nav_cancel",
+    "parameters": ""
+  },
+  {
+    "phrase": "Позвони Ольге",
+    "intent": "call_start",
+    "parameters": "{\"contact\": \"Ольга\"}"
+  },
+  {
+    "phrase": "Набери номер +79161234567",
+    "intent": "call_start",
+    "parameters": "{\"contact\": \"+79161234567\"}"
+  },
+  {
+    "phrase": "Возьми вызов",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Подними трубку",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Отключи звонок",
+    "intent": "call_hangup",
+    "parameters": ""
+  },
+  {
+    "phrase": "Сбрось вызов, пожалуйста",
+    "intent": "call_hangup",
+    "parameters": ""
+  },
+  {
+    "phrase": "Включи фары на авто",
+    "intent": "headlights_set",
+    "parameters": "{\"state\": \"on\"}"
+  },
+  {
+    "phrase": "Выруби фары",
+    "intent": "headlights_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Автофары на авто включить в авторежиме",
+    "intent": "headlights_set",
+    "parameters": "{\"state\": \"auto\"}"
+  },
+  {
+    "phrase": "Включи дальний свет",
+    "intent": "high_beam_set",
+    "parameters": "{\"state\": \"on\"}"
+  },
+  {
+    "phrase": "Выключи дальний",
+    "intent": "high_beam_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Поставь дворники на авто-режим",
+    "intent": "wipers_set",
+    "parameters": "{\"speed\": \"auto\"}"
+  },
+  {
+    "phrase": "Дворники медленно",
+    "intent": "wipers_set",
+    "parameters": "{\"speed\": \"low\"}"
+  },
+  {
+    "phrase": "Дворники на быстрый режим",
+    "intent": "wipers_set",
+    "parameters": "{\"speed\": \"high\"}"
+  },
+  {
+    "phrase": "Режим дождя включи авто",
+    "intent": "rain_set",
+    "parameters": "{\"mode\": \"auto\"}"
+  },
+  {
+    "phrase": "Переключи дождевой режим на ручной",
+    "intent": "rain_set",
+    "parameters": "{\"mode\": \"manual\"}"
+  },
+  {
+    "phrase": "Включи подогрев руля",
+    "intent": "wheel_heater_set",
+    "parameters": "{\"state\": \"on\"}"
+  },
+  {
+    "phrase": "Выключи обогрев колеса",
+    "intent": "wheel_heater_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Привет",
+    "intent": "chitchat",
+    "parameters": ""
+  },
+  {
+    "phrase": "Как дела?",
+    "intent": "chitchat",
+    "parameters": ""
+  },
+  {
+    "phrase": "Спасибо",
+    "intent": "chitchat",
+    "parameters": ""
+  },
+  {
+    "phrase": "Жарко, опусти окно пожалуйста",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"driver\", \"percent\": 40}"
+  },
+  {
+    "phrase": "Холодно здесь, включи обогрев",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 26}"
+  },
+  {
+    "phrase": "Можно потише музыку?",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": -5}"
+  },
+  {
+    "phrase": "А можно на пять громче?",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 5}"
+  },
+  {
+    "phrase": "Сделай радио тише на 7",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": -7}"
+  },
+  {
+    "phrase": "Переключи на AUX",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"aux\"}"
+  },
+  {
+    "phrase": "Плейлист в случайном порядке",
+    "intent": "media_shuffle_set",
+    "parameters": ""
+  },
+  {
+    "phrase": "Сколько время?",
+    "intent": "chitchat",
+    "parameters": ""
+  },
+  {
+    "phrase": "Подключи телефон по Bluetooth",
+    "intent": "media_source_set",
+    "parameters": "{\"source\": \"bluetooth\"}"
+  },
+  {
+    "phrase": "Поехали в центр города",
+    "intent": "nav_start",
+    "parameters": "{\"destination\": \"центр города\"}"
+  },
+  {
+    "phrase": "Отмени маршрут до центра",
+    "intent": "nav_cancel",
+    "parameters": ""
+  },
+  {
+    "phrase": "Бери трубку, там важный звонок",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Не отвечай на этот звонок",
+    "intent": "call_hangup",
+    "parameters": ""
+  },
+  {
+    "phrase": "Поставь кондиционер на 28, мне жарко",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 28}"
+  },
+  {
+    "phrase": "Снизь температуру до 16",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 16}"
+  },
+  {
+    "phrase": "Врубай музыку погромче",
+    "intent": "play_music",
+    "parameters": ""
+  },
+  {
+    "phrase": "Сделай громче на десять",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 10}"
+  },
+  {
+    "phrase": "Понизь звук до 3",
+    "intent": "volume_set",
+    "parameters": "{\"level\": 3}"
+  },
+  {
+    "phrase": "Заморозь стекла — включи обдув заднего окна",
+    "intent": "defrost_set",
+    "parameters": "{\"state\": \"on\", \"target\": \"rear\"}"
+  },
+  {
+    "phrase": "Убери рециркуляцию, душно",
+    "intent": "ac_mode_set",
+    "parameters": "{\"enabled\": false}"
+  },
+  {
+    "phrase": "Включи рециркуляцию, запах снаружи",
+    "intent": "ac_mode_set",
+    "parameters": "{\"enabled\": true}"
+  },
+  {
+    "phrase": "Поменяй песню",
+    "intent": "next_track",
+    "parameters": ""
+  },
+  {
+    "phrase": "Верни предыдущую композицию",
+    "intent": "previous_track",
+    "parameters": ""
+  },
+  {
+    "phrase": "Звук вкл/выкл?",
+    "intent": "volume_mute_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Могу я ответить?",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Да, алло",
+    "intent": "call_answer",
+    "parameters": ""
+  },
+  {
+    "phrase": "Поговори с Димой",
+    "intent": "call_start",
+    "parameters": "{\"contact\": \"Дима\"}"
+  },
+  {
+    "phrase": "Позвонить маме, пожалуйста",
+    "intent": "call_start",
+    "parameters": "{\"contact\": \"мама\"}"
+  },
+  {
+    "phrase": "Поставь радио на 87.5",
+    "intent": "radio_set",
+    "parameters": "{\"frequency\": \"87.5\"}"
+  },
+  {
+    "phrase": "Переключи на Next FM",
+    "intent": "radio_set_station",
+    "parameters": "{\"station\": \"Next FM\"}"
+  },
+  {
+    "phrase": "Быстрее дворники — дождь сильный",
+    "intent": "wipers_set",
+    "parameters": "{\"speed\": \"high\"}"
+  },
+  {
+    "phrase": "Дворники остановить",
+    "intent": "wipers_set",
+    "parameters": "{\"speed\": \"off\"}"
+  },
+  {
+    "phrase": "Врубай ближний свет",
+    "intent": "headlights_set",
+    "parameters": "{\"state\": \"on\"}"
+  },
+  {
+    "phrase": "Отруби дальний",
+    "intent": "high_beam_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Подогрей руль, пожалуйста",
+    "intent": "wheel_heater_set",
+    "parameters": "{\"state\": \"on\"}"
+  },
+  {
+    "phrase": "Выключи подогрев руля",
+    "intent": "wheel_heater_set",
+    "parameters": "{\"state\": \"off\"}"
+  },
+  {
+    "phrase": "Немного открой люк на 5%",
+    "intent": "sunroof_set",
+    "parameters": "{\"action\": \"open\", \"percent\": 5}"
+  },
+  {
+    "phrase": "Закрой люк полностью сейчас",
+    "intent": "sunroof_set",
+    "parameters": "{\"action\": \"close\", \"percent\": 0}"
+  },
+  {
+    "phrase": "Сделай 22 градуса и рециркуляцию включи",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 22}"
+  },
+  {
+    "phrase": "Температуру на 23, пожалуйста",
+    "intent": "ac_set",
+    "parameters": "{\"state\": \"on\", \"temperature\": 23}"
+  },
+  {
+    "phrase": "Пожалуйста, убавь громкость на 12",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": -12}"
+  },
+  {
+    "phrase": "Прибавь звук на семь, не сильно",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 7}"
+  },
+  {
+    "phrase": "Звук выключить на мгновение",
+    "intent": "media_pause",
+    "parameters": ""
+  },
+  {
+    "phrase": "Пауза",
+    "intent": "media_pause",
+    "parameters": ""
+  },
+  {
+    "phrase": "Нам нужно к ближайшему кафе",
+    "intent": "nav_start",
+    "parameters": "{\"destination\": \"ближайшее кафе\"}"
+  },
+  {
+    "phrase": "Стоп навигация",
+    "intent": "nav_cancel",
+    "parameters": ""
+  },
+  {
+    "phrase": "Эй, кто звонит?",
+    "intent": "chitchat",
+    "parameters": ""
+  },
+  {
+    "phrase": "Можно музыку потише, пожалуйста?",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": -5}"
+  },
+  {
+    "phrase": "Громкость плюс три",
+    "intent": "volume_change",
+    "parameters": "{\"delta\": 3}"
+  },
+  {
+    "phrase": "Поставь повтор всех треков",
+    "intent": "media_repeat_set",
+    "parameters": "{\"mode\": \"all\"}"
+  },
+  {
+    "phrase": "Выключай кондиционер, стало прохладно",
+    "intent": "ac_off",
+    "parameters": ""
+  },
+  {
+    "phrase": "Открой окно водителя на половину",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"driver\", \"percent\": 50}"
+  },
+  {
+    "phrase": "Приоткрой пассажирское окошко на 20%",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"passenger\", \"percent\": 20}"
+  },
+  {
+    "phrase": "Опусти все окна полностью",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"all\", \"percent\": 100}"
+  },
+  {
+    "phrase": "Задвинь окно водителя на 10",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"close\", \"window\": \"driver\", \"percent\": 10}"
+  },
+  {
+    "phrase": "Захлопни пассажирское",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"close\", \"window\": \"passenger\", \"percent\": 0}"
+  },
+  {
+    "phrase": "Отодвинуй левое окно наполовину, пожалуйста",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"open\", \"window\": \"driver\", \"percent\": 50}"
+  },
+  {
+    "phrase": "Подними все стекла на десять процентов",
+    "intent": "window_set",
+    "parameters": "{\"action\": \"close\", \"window\": \"all\", \"percent\": 90}"
+  }
+]
