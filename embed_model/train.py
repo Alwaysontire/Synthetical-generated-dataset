@@ -44,18 +44,27 @@ def eval_epoch(model, loader, criterion, DEVICE):
 def main():
     DEVICE = "mps" if torch.backends.mps.is_available() else "cpu"
     EPOCHS = 20
-    LR = 1e-3
+    LR_HEAD = 1e-3
+    LR_BACKBONE = 2e-5  
 
     train_dl, val_dl, _ = build_dataloader("data/processed")
     train_labels = train_dl.dataset.labels.numpy()
-    weights = compute_class_weight("balanced", classes=np.unique(train_labels), y=train_labels)
-    weights = np.clip(weights, 1.0, weights.mean() * 3)
-    class_weights = torch.tensor(weights, dtype=torch.float32).to(DEVICE)
+    # weights = compute_class_weight("balanced", classes=np.unique(train_labels), y=train_labels)
+    # weights = np.clip(weights, 1.0, weights.mean() * 3)
+    # class_weights = torch.tensor(weights, dtype=torch.float32).to(DEVICE)
+
     model = TextCNN().to(DEVICE)
-    optimizer = torch.optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()), lr=LR)
+    model.load_state_dict(torch.load("data/best_model.pt", map_location=DEVICE))
+
+    optimizer = torch.optim.AdamW([
+        {"params": model.backbone.parameters(), "lr": LR_BACKBONE},
+        {"params": list(model.convs.parameters()) +
+                   list(model.projection.parameters()) +
+                   list(model.classifier.parameters()), "lr": LR_HEAD},
+    ])
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer=optimizer, T_max=EPOCHS)
-        
-    criterion = torch.nn.CrossEntropyLoss(weight=class_weights)
+
+    criterion = torch.nn.CrossEntropyLoss()
     best_val_loss = float("inf")
 
     for epoch in range(EPOCHS):

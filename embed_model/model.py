@@ -9,8 +9,6 @@ class TextCNN(nn.Module):
                  kernel_sizes=(2, 3, 4, 5), embedding_dim=256, dropout=0.1):
         super().__init__()
         self.backbone = AutoModel.from_pretrained("intfloat/multilingual-e5-small")
-        for p in self.backbone.parameters():
-            p.requires_grad = False
         
         hidden = self.backbone.config.hidden_size
 
