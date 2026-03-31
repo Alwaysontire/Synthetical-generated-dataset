@@ -5,22 +5,30 @@ import torch.nn.functional as F
 import torch
 
 class TextCNN(nn.Module):
-    def __init__(self, num_classes=90, num_filters=128,
-                 kernel_sizes=(2, 3, 4, 5), embedding_dim=256, dropout=0.1):
+    def __init__(self, num_classes=90, num_filters=64,
+                 kernel_sizes=(2, 3, 4, 5), embedding_dim=256, dropout=0.3):
         super().__init__()
-        self.backbone = AutoModel.from_pretrained("intfloat/multilingual-e5-small")
-        
+        self.backbone = AutoModel.from_pretrained("intfloat/multilingual-e5-base")
         hidden = self.backbone.config.hidden_size
 
         self.convs = nn.ModuleList([
             nn.Conv1d(hidden, num_filters, k) for k in kernel_sizes
         ])
+
         self.projection = nn.Sequential(
             nn.Dropout(dropout),
-            nn.Linear(num_filters * len(kernel_sizes), embedding_dim),
+            nn.Linear(num_filters * len(kernel_sizes) + hidden, embedding_dim),
             nn.LayerNorm(embedding_dim),
+            nn.GELU(),
+            nn.Dropout(dropout)
         )
         self.classifier = nn.Linear(embedding_dim, num_classes)
+
+    def masked_mean_pool(self, hidden, attention_mask):
+        mask = attention_mask.unsqueeze(-1).bool()
+        hidden = hidden.masked_fill(~mask, 0.0)
+        
+        return hidden.sum(dim=1) / attention_mask.sum(dim=1, keepdim=True).clamp(min=1)
     
     def encode(self, input_ids, attention_mask):
         outputs = self.backbone(input_ids=input_ids, attention_mask=attention_mask)
@@ -28,11 +36,15 @@ class TextCNN(nn.Module):
         x = hidden.transpose(1, 2)
         pooled = []
         for conv in self.convs:
-            c = F.relu(conv(x))
+            c = F.gelu(conv(x))
             c = c.max(dim=2).values
             pooled.append(c)
-        x = torch.cat(pooled, dim=1)
-        embedding = self.projection(x)
+
+        cnn_feat = torch.cat(pooled, dim=1)
+        mean_feat = self.masked_mean_pool(hidden, attention_mask)
+
+        embedding = self.projection(torch.cat([cnn_feat, mean_feat], dim=1))
+
         return embedding
     
 
@@ -42,20 +54,3 @@ class TextCNN(nn.Module):
         return logits, embedding
 
 
-
-
-
-def main():
-    train, val, test = build_dataloader("data/processed")
-    
-    model = TextCNN()
-    model.eval()
-
-    batch = next(iter(train))
-    with torch.no_grad():
-        logits, embedding = model(batch["input_ids"], batch["attention_mask"])
-    print("log shape: ", logits.shape)
-    print("emd shape: ", embedding.shape)
-
-if __name__ == "__main__":
-    main()

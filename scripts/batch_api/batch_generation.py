@@ -1,11 +1,14 @@
 from openai import OpenAI
 import math, random, re, json, os, time, sys, csv
+import argparse
 from dataclasses import dataclass
 from dotenv import load_dotenv
 from pathlib import Path
 from collections import Counter
 
+ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(ROOT))
 
 from build_anchors import INTENTS, build_anchor
 
@@ -13,59 +16,23 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 
+LANG_PROMPTS = {
+    "ru": "prompts.ru_promt",
+    "en": "prompts.en_promt",
+}
+
+
 @dataclass
 class RunConfig:
-    model: str = "gpt-5-nano"
-    chunk: int = 60
+    model: str = "gpt-4o-mini"
+    chunk: int = 40
     overgen: float = 1.35
     target_n: int = 20000
+    temperature: float = 1.15
     out_path: str = "dataset_final.json"
-    raw_out_path: str = "raw_intent.json"
     batch_input_path: str = "batch_input.jsonl"
+    language: str = "ru"
 
-def build_system_rq() -> str:
-    return f"""
-Ты эксперт по генерации синтетических данных для обучения голосовых ассистентов в автомобилях.
-Твоя задача — создать МАКСИМАЛЬНО РАЗНООБРАЗНЫЙ датасет для распознавания намерений водителя.
-
-КРИТИЧЕСКИ ВАЖНО: избегай повторений и шаблонов.
-- Каждая phrase должна быть уникальной по формулировке.
-- Не зацикливайся на одних и тех же глаголах и первых словах.
-- Меняй длину, порядок слов, стиль (коротко/длинно/вопрос/вежливо/разговорно), добавляй эмоции и контекст.
-- Не копируй примеры из инструкции.
-
-ФОРМАТ ВЫВОДА: вернуть JSON-объект с полем "items" (массив объектов). Без markdown и комментариев.
-Формат: {{"items": [...]}}
-
-Каждый элемент массива items:
-1) "phrase"      — команда на русском
-2) "intent_raw"  — свободный интент в snake_case (латиница), может быть более детальным
-3) "intent"      — канонический интент СТРОГО из списка
-4) "parameters"  — JSON-ОБЪЕКТ параметров или {{}} если параметров нет
-
-Правила для intent_raw:
-- snake_case, латиница, 2–5 слов максимум
-- intent_raw может уточнять смысл, но НЕ должен менять смысл phrase и выдумывать параметры
-
-КАНОНИЧЕСКИЕ intent (enum):
-{", ".join(INTENTS)}
-
-Параметры:
-- извлекай ТОЛЬКО если реально присутствуют в phrase
-- если параметров нет, parameters = {{}}
-- числа могут быть словами (пять, пятёрку, наполовину) — извлекай корректно
-
-АНТИПАТТЕРНЫ:
-- серии фраз с одинаковым началом
-- копипаст с микроправками
-- шаблон "сделай X на Y" много раз подряд
-- одни и те же глаголы механически
-
-САМОПРОВЕРКА перед ответом:
-- внутри массива нет дублей phrase
-- много разных первых слов
-- есть короткие/средние/длинные, вопросы и просьбы
-"""
 
 def build_schema(chunk: int) -> dict:
     return {
@@ -78,10 +45,9 @@ def build_schema(chunk: int) -> dict:
                 "items": {
                     "type": "object",
                     "additionalProperties": False,
-                    "required": ["phrase", "intent_raw", "intent", "parameters"],
+                    "required": ["phrase", "intent", "parameters"],
                     "properties": {
                         "phrase": {"type": "string", "minLength": 1},
-                        "intent_raw": {"type": "string", "minLength": 2},
                         "intent": {"type": "string", "enum": INTENTS},
                         "parameters": {
                             "type": "object"
@@ -94,43 +60,61 @@ def build_schema(chunk: int) -> dict:
         "additionalProperties": False
     }
 
-def make_user_prompt(chunk: int, idx: int) -> str:
+def make_user_prompt(chunk: int, idx: int, lang: str = "ru") -> str:
     rng = random.Random(idx * 1009 + 7)
     use_anchor = rng.random() < 0.5
-    anchor = f'Якорь сцены: "{build_anchor(rng)}".\n' if use_anchor else ""
 
-    
-    return (
-        f"Сгенерируй ровно {chunk} примеров.\n"
-        f"{anchor}"
-        f"Требования:\n"
-        f"- максимально разнообразные формулировки, без дублей\n"
-        f"- пытайся максимально близко съимитировать человека за рулем"
-        f"- вариативность длины: 1–2 слова, 3–6 слов, 10+ слов\n"
-        f"- избегай однообразных стартовых слов в серии\n"
-        f"Верни только JSON-объект в формате: {{\"items\": [...]}}"
-    )
+    if lang == "en":
+        anchor = f'Scene anchor: "{build_anchor(rng, lang="en")}".\n' if use_anchor else ""
+        return (
+            f"Generate exactly {chunk} examples.\n"
+            f"{anchor}"
+            f"Requirements:\n"
+            f"- maximally diverse phrasings, no duplicates\n"
+            f"- imitate a real driver as closely as possible\n"
+            f"- vary length: 1–2 words, 3–6 words, 10+ words\n"
+            f"- avoid repetitive opening words in a series\n"
+            f'Return only a JSON object in the format: {{"items": [...]}}'
+        )
+    else:
+        anchor = f'Якорь сцены: "{build_anchor(rng)}".\n' if use_anchor else ""
+        return (
+            f"Сгенерируй ровно {chunk} примеров.\n"
+            f"{anchor}"
+            f"Требования:\n"
+            f"- максимально разнообразные формулировки, без дублей\n"
+            f"- пытайся максимально близко съимитировать человека за рулем"
+            f"- вариативность длины: 1–2 слова, 3–6 слов, 10+ слов\n"
+            f"- избегай однообразных стартовых слов в серии\n"
+            f"Верни только JSON-объект в формате: {{\"items\": [...]}}"
+        )
+
 
 def create_batch_input(cfg: RunConfig) -> int:
+    import importlib
+    module = importlib.import_module(LANG_PROMPTS[cfg.language])
+    build_system_rq = module.build_system_rq
+
     total = int(cfg.target_n * cfg.overgen)
     num_requests = math.ceil(total / cfg.chunk)
 
     schema = build_schema(cfg.chunk)
-    prompt = build_system_rq()
+    prompt = build_system_rq(INTENTS)
 
     with open(cfg.batch_input_path, "w", encoding="utf-8") as f:
         for i in range(num_requests):
             body = {
                 "model": cfg.model,
+                "temperature": cfg.temperature,
                 "messages": [
                     {"role": "system", "content": prompt},
-                    {"role": "user", "content": make_user_prompt(cfg.chunk, i)}
+                    {"role": "user", "content": make_user_prompt(cfg.chunk, i, cfg.language)}
                 ],
                 "response_format": {
                     "type": "json_schema",
                     "json_schema": {
                         "name": "car_intents_chunk",
-                        "strict": False,  
+                        "strict": False,
                         "schema": schema
                     }
                 }
@@ -317,7 +301,7 @@ def run_batch_generation(cfg: RunConfig):
                 seen.add(key)
 
                 intent = ex.get("intent")
-                intent_raw = ex.get("intent_raw")
+
                 params = ex.get("parameters") or {}
 
                 if intent not in INTENTS:
@@ -327,15 +311,14 @@ def run_batch_generation(cfg: RunConfig):
 
                 collected.append({
                     "phrase": phrase,
-                    "intent_raw": intent_raw,
                     "intent": intent,
                     "parameters": params,
                 })
                 
 
 
-    with open(cfg.raw_out_path, "w", encoding="utf-8") as f:
-        json.dump(collected[:cfg.target_n], f, ensure_ascii=False, indent=2)
+    # with open(cfg.raw_out_path, "w", encoding="utf-8") as f:
+        # json.dump(collected[:cfg.target_n], f, ensure_ascii=False, indent=2)
 
     final = []
     for ex in collected:
@@ -361,12 +344,28 @@ def run_batch_generation(cfg: RunConfig):
     print(f"\n Готово! CSV файл: {csv_path}")
 
 
-cfg = RunConfig(
-    target_n=10000, 
-    overgen=1.35, 
-    out_path="batch_10k.json",
-    raw_out_path="raw_batch_10k.json",
-    batch_input_path="batch_input.jsonl"
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Batch generation of car intent dataset")
+    parser.add_argument("--lang", choices=["ru", "en"], default="ru", help="Language for generated phrases (default: ru)")
+    parser.add_argument("--model", default="gpt-4o-mini", help="OpenAI model to use")
+    parser.add_argument("--target-n", type=int, default=20000, help="Target number of examples")
+    parser.add_argument("--chunk", type=int, default=50, help="Examples per request")
+    parser.add_argument("--overgen", type=float, default=1.2, help="Overgeneration factor")
+    parser.add_argument("--out", default=None, help="Output JSON path (default: dataset_{lang}.json)")
+    parser.add_argument("--batch-input", default=None, help="Batch input JSONL path")
+    args = parser.parse_args()
+
+    out_path = args.out or f"dataset_{args.lang}.json"
+    batch_input_path = args.batch_input or f"batch_input_{args.lang}.jsonl"
+
+    cfg = RunConfig(
+        model=args.model,
+        target_n=args.target_n,
+        chunk=args.chunk,
+        overgen=args.overgen,
+        out_path=out_path,
+        batch_input_path=batch_input_path,
+        language=args.lang,
     )
 
-run_batch_generation(cfg)
+    run_batch_generation(cfg)

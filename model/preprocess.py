@@ -21,8 +21,9 @@ def LabelEnconding(data):
 
 
 def tokenize_save(tokenizer, X, y, path, max_length=64):
+    texts = ("query: " + X["phrase"].astype(str)).tolist()
     enc = tokenizer(
-        X["phrase"].tolist(),
+        texts,
         padding="max_length",
         truncation=True,
         max_length=max_length,
@@ -35,7 +36,7 @@ def tokenize_save(tokenizer, X, y, path, max_length=64):
     }, path)
 
 def main():
-    data = pd.read_csv("samples/all_data.csv")
+    data = pd.read_csv("samples/multilingual_data.csv")
     data = drop_nan(data)
     data_enc, le = LabelEnconding(data)
     y = data_enc["intent"]
@@ -48,12 +49,12 @@ def main():
     with open("data/processed/label_map.json", "w", encoding="utf-8") as f:
         json.dump(label_map, f, ensure_ascii=False, indent=2)
 
-    tokenizer = AutoTokenizer.from_pretrained("intfloat/multilingual-e5-small")
+    tokenizer = AutoTokenizer.from_pretrained("intfloat/multilingual-e5-large")
 
 
-    tokenize_save(tokenizer, X_train, y_train, "data/processed/train.pt")
-    tokenize_save(tokenizer, X_val, y_val, "data/processed/val.pt")
-    tokenize_save(tokenizer, X_test, y_test, "data/processed/test.pt")
+    tokenize_save(tokenizer, X_train, y_train, "data/large_train.pt")
+    tokenize_save(tokenizer, X_val, y_val, "data/large_val.pt")
+    tokenize_save(tokenizer, X_test, y_test, "data/large_test.pt")
 
 
 
