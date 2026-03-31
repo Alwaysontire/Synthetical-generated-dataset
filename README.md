@@ -158,9 +158,7 @@ python quality/quality_control.py
 | Languages | Russian + English |
 | Classes | 90 intents |
 | Raw size | ~200,000 phrases |
-| After dedup (threshold=0.97) | ~46,000 phrases |
-| Min samples per class | 229 |
-| Max samples per class | 1,456 |
+
 
 Semantic deduplication uses cosine similarity on `multilingual-e5-small` embeddings.
 Phrases with similarity ≥ 0.97 are treated as near-duplicates (second occurrence removed).
@@ -191,9 +189,3 @@ Phrases with similarity ≥ 0.97 are treated as near-duplicates (second occurren
 - PyTorch
 - Transformers (HuggingFace)
 - OpenAI API key (for data generation)
-
-Set your key in `.env`:
-
-```
-OPENAI_API_KEY=sk-...
-```
