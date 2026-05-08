@@ -12,37 +12,39 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 
-# Редкие классы (< ~125 примеров в датасете) — генерируем именно их
 RARE_INTENTS = [
-    "phone_unpair",
-    "phone_disconnect",
-    "phone_pair",
-    "phone_connect",
-    "suspension_mode_set",
-    "steering_wheel_memory_recall",
-    "cruise_control_resume",
-    "powertrain_mode_set",
-    "language_set",
-    "reading_light_set",
     "regen_level_set",
+    "phone_unpair",
+    "language_set",
+    "suspension_mode_set",
+    "phone_disconnect",
+    "odometer_query",
     "hud_set",
-    "trunk_close",
-    "start_stop_set",
-    "voice_assistant_set",
-    "mirror_fold_set",
+    "powertrain_mode_set",
+    "mirror_heat_set",
     "auto_hold_set",
-    "lane_keep_assist_set",
-    "adaptive_cruise_distance_set",
-    "message_reply",
+    "window_child_lock_set",
+    "trip_reset",
+    "cruise_control_resume",
+    "park_distance_alert_set",
+    "cruise_control_cancel",
+    "warning_explain",
+    "start_stop_set",
+    "phone_pair",
+    "fuel_cap_open",
+    "steering_wheel_memory_recall",
+    "camera_view_set",
+    "voice_assistant_set",
+    "system_volume_set",
 ]
 
 
 @dataclass
 class RunConfig:
     model: str = "gpt-4o-mini"
-    chunk: int = 60   # 60 / 20 классов = 3 примера на класс за запрос
+    chunk: int = 60   
     overgen: float = 1.3
-    target_n: int = 8000  # ~400 примеров на каждый из 20 классов
+    target_n: int = 8000  
     temperature: float = 1.0
     out_path: str = "samples/rare_classes.json"
     batch_input_path: str = "samples/batch_input_rare.jsonl"
@@ -50,62 +52,61 @@ class RunConfig:
 
 def build_system_rq_rare() -> str:
     intents_desc = """
-- phone_pair                  — сопряжение нового телефона по Bluetooth (первичная настройка)
-- phone_unpair                — удаление / отвязка телефона из памяти системы
-- phone_connect               — подключение уже сопряжённого телефона
-- phone_disconnect            — отключение активного телефона (без удаления)
-- suspension_mode_set         — изменение режима подвески (спортивная / комфорт / авто)
-- steering_wheel_memory_recall — возврат рулевой колонки в сохранённое положение
-- cruise_control_resume       — возобновление круиз-контроля после паузы (не включение с нуля)
-- powertrain_mode_set         — смена режима трансмиссии/двигателя (спорт / эко / авто / норм)
-- language_set                — смена языка интерфейса мультимедиа / навигации
-- reading_light_set           — управление светом для чтения (для пассажиров)
-- regen_level_set             — уровень рекуперации энергии (только для электромобилей)
-- hud_set                     — управление проекционным дисплеем (HUD) — включить/выключить/настроить
-- trunk_close                 — закрытие багажника (не открытие!)
-- start_stop_set              — управление системой авто-старт/стоп двигателя
-- voice_assistant_set         — настройка голосового ассистента (язык, чувствительность, вкл/выкл)
-- mirror_fold_set             — складывание / раскладывание боковых зеркал
-- auto_hold_set               — включение / выключение функции авто-удержания на тормозе
-- lane_keep_assist_set        — управление системой удержания в полосе
-- adaptive_cruise_distance_set — изменение дистанции адаптивного круиз-контроля
-- message_reply               — ответить на входящее сообщение голосом
+- regen_level_set             — уровень рекуперации энергии (только для электромобилей: высокий/низкий/авто)
+- phone_unpair                — удаление телефона из памяти системы навсегда (не просто отключение)
+- language_set                — смена языка интерфейса / навигации / голосового ассистента
+- suspension_mode_set         — изменение режима подвески (спорт / комфорт / авто / внедорожный)
+- phone_disconnect            — отключить активный телефон от системы (без удаления из памяти)
+- odometer_query              — узнать показания одометра / пробег автомобиля
+- hud_set                     — управление проекционным дисплеем HUD (включить / выключить / яркость)
+- powertrain_mode_set         — сменить режим трансмиссии или двигателя (спорт / эко / авто / нормальный)
+- mirror_heat_set             — включить / выключить обогрев боковых зеркал
+- auto_hold_set               — включить / выключить авто-удержание на тормозе на светофоре
+- window_child_lock_set       — детская блокировка окон (заблокировать / разблокировать кнопки окон)
+- trip_reset                  — сбросить данные поездки (расход, пробег поездки, среднюю скорость)
+- cruise_control_resume       — ВОЗОБНОВИТЬ круиз-контроль после паузы (не включать с нуля!)
+- park_distance_alert_set     — датчики парковки / парктроник (включить / выключить / настроить звук)
+- cruise_control_cancel       — полностью ОТКЛЮЧИТЬ / выключить круиз-контроль
+- warning_explain             — попросить объяснить значение горящего предупреждающего индикатора
+- start_stop_set              — система авто-старт/стоп двигателя (включить / выключить)
+- phone_pair                  — сопряжение нового телефона по Bluetooth (первый раз, новое устройство)
+- fuel_cap_open               — открыть крышку топливного бака
+- steering_wheel_memory_recall — вернуть рулевую колонку в сохранённое положение
+- camera_view_set             — выбрать вид камеры (задняя / передняя / 360° / боковые)
+- voice_assistant_set         — настройка голосового ассистента (язык / чувствительность / вкл/выкл)
+- system_volume_set           — установить конкретное числовое значение общей громкости системы
 """.strip()
 
-    return f"""
-Ты эксперт по генерации синтетических данных для обучения голосовых ассистентов в автомобилях.
-Твоя задача — создать МАКСИМАЛЬНО РАЗНООБРАЗНЫЙ датасет для КОНКРЕТНЫХ редких намерений водителя.
+    return f"""Ты эксперт по генерации синтетических данных для обучения голосовых ассистентов в автомобилях.
+Твоя задача — создать МАКСИМАЛЬНО РАЗНООБРАЗНЫЙ датасет для редких намерений водителя.
 
 ЦЕЛЕВЫЕ ИНТЕНТЫ (только они!):
 {intents_desc}
 
-ВАЖНЫЕ РАЗЛИЧИЯ МЕЖДУ ПОХОЖИМИ ИНТЕНТАМИ:
-- phone_pair vs phone_connect: pair = первый раз добавляем новый телефон; connect = снова подключаем уже добавленный
-- phone_unpair vs phone_disconnect: unpair = удаляем из памяти; disconnect = просто разрываем текущее соединение
-- cruise_control_resume vs cruise_control_set: resume = возобновить после паузы; set = включить с нуля
-- trunk_close (только закрытие) vs trunk_open (только открытие) — не путать
+ВАЖНЫЕ РАЗЛИЧИЯ:
+- phone_pair vs phone_disconnect vs phone_unpair: pair = добавить новый; disconnect = отключить текущий; unpair = удалить из памяти
+- cruise_control_resume vs cruise_control_cancel: resume = возобновить после паузы; cancel = выключить совсем
+- trip_reset vs odometer_query: reset = сбросить счётчик поездки; query = просто спросить пробег
 
-КРИТИЧЕСКИ ВАЖНО:
-- Генерируй ТОЛЬКО фразы для этих 20 интентов, не уходи в другие темы
-- Каждая phrase должна быть уникальной по формулировке
-- Меняй длину, стиль (коротко/длинно/вопрос/вежливо/разговорно)
-- Не зацикливайся на одних и тех же глаголах
-- Добавляй синонимы, перифразы, разговорные выражения
-- Иногда добавляй контекст ("у меня новый телефон", "слишком яркий экран")
+ТРЕБОВАНИЯ К ФРАЗАМ:
+- Каждая phrase уникальна по формулировке, на русском или английском
+- Меняй длину: 1–3 слова, 4–7 слов, 8+ слов
+- Меняй стиль: коротко / развёрнуто / вопросом / вежливо / разговорно
+- Для system_volume_set: обязательно числовое значение (1–20 или проценты)
+- Для steering_wheel_memory_recall: упоминание возврата/памяти позиции
 
-ФОРМАТ ВЫВОДА: вернуть JSON-объект с полем "items". Без markdown и комментариев.
+ФОРМАТ ВЫВОДА: JSON-объект с полем "items". Без markdown и комментариев.
 Формат: {{"items": [...]}}
 
 Каждый элемент:
-1) "phrase"      — команда на русском
-2) "intent"      — СТРОГО один из: {", ".join(RARE_INTENTS)}
-3) "parameters"  — JSON-объект параметров или {{}} если нет
+1) "phrase"     — команда на русском или английском
+2) "intent"     — СТРОГО один из: {", ".join(RARE_INTENTS)}
+3) "parameters" — JSON-объект параметров или {{}} если нет
 
-Параметры (если реально присутствуют в фразе):
-- mode: режим (sport / eco / comfort / auto / normal)
-- level: уровень (числом или словом)
-- device_name: имя устройства ("iPhone Маши")
-- value: вкл/выкл или числовое значение (on / off / число)
+Параметры (если явно присутствуют в фразе):
+- mode: режим (sport / eco / comfort / auto / normal / off-road)
+- level: уровень (high / medium / low / числом)
+- value: числовое значение или on / off
 - только значения на английском языке
 """
 
@@ -138,7 +139,6 @@ def build_schema_rare(chunk: int) -> dict:
 def make_user_prompt_rare(chunk: int, idx: int) -> str:
     rng = random.Random(idx * 1009 + 7)
 
-    # Равномерно распределяем по редким классам
     per_intent = chunk // len(RARE_INTENTS)
     remainder = chunk % len(RARE_INTENTS)
     counts = [per_intent + (1 if i < remainder else 0) for i in range(len(RARE_INTENTS))]
@@ -157,7 +157,7 @@ def make_user_prompt_rare(chunk: int, idx: int) -> str:
         f"Распределение по интентам:\n{distribution}\n\n"
         f"Требования:\n"
         f"- максимально разнообразные формулировки, без дублей\n"
-        f"- имитируй реального водителя, который хочет управлять телефоном через Bluetooth\n"
+        f"- имитируй реального водителя в автомобиле\n"
         f"- вариативность длины: 1–3 слова, 4–7 слов, 8+ слов\n"
         f"- избегай однообразных стартовых слов в серии\n"
         f"Верни только JSON-объект в формате: {{\"items\": [...]}}"
@@ -306,7 +306,7 @@ def run_batch_generation_rare(cfg: RunConfig):
                 })
                 intent_counts[intent] += 1
 
-    # Сохраняем JSON
+
     final = []
     for ex in collected[:cfg.target_n]:
         params_str = "" if ex["parameters"] == {} else json.dumps(ex["parameters"], ensure_ascii=False)
@@ -320,28 +320,27 @@ def run_batch_generation_rare(cfg: RunConfig):
     with open(cfg.out_path, "w", encoding="utf-8") as f:
         json.dump(final, f, ensure_ascii=False, indent=2)
 
-    # Сохраняем CSV
+
     csv_path = cfg.out_path.replace(".json", ".csv")
     with open(csv_path, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["phrase", "intent", "parameters"])
         writer.writeheader()
         writer.writerows(final)
 
-    print(f"\nОшибок: {failed_rows}")
-    print(f"Уникальных собрано: {len(collected)} → сохранено: {len(final)}")
+    print(f"Уникальных собрано: {len(collected)} и сохранено: {len(final)}")
     print(f"Распределение по интентам: {json.dumps(intent_counts, ensure_ascii=False)}")
     print(f"JSON: {cfg.out_path}")
     print(f"CSV:  {csv_path}")
 
 
-cfg = RunConfig(
-    model="gpt-4o-mini",
-    target_n=8000,
-    chunk=60,
-    overgen=1.3,
-    temperature=1.0,
-    out_path="samples/rare_classes.json",
-    batch_input_path="samples/batch_input_rare.jsonl"
-)
-
-run_batch_generation_rare(cfg)
+if __name__ == "__main__":
+    cfg = RunConfig(
+        model="gpt-4o-mini",
+        target_n=9200,   
+        chunk=69,        
+        overgen=1.3,
+        temperature=1.0,
+        out_path="samples/rare_classes_v2.json",
+        batch_input_path="samples/batch_input_rare_v2.jsonl"
+    )
+    run_batch_generation_rare(cfg)

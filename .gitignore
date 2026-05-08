@@ -20,3 +20,4 @@ Thumbs.db
 *.tar.gz
 *.json
 *.pt
+bert_model/

@@ -1,11 +1,10 @@
-from dataloader import build_dataloader
 from transformers import AutoModel
 import torch.nn as nn
 import torch.nn.functional as F
 import torch
 
 class TextCNN(nn.Module):
-    def __init__(self, num_classes=90, num_filters=64,
+    def __init__(self, num_classes=82, num_filters=128,
                  kernel_sizes=(2, 3, 4, 5), embedding_dim=256, dropout=0.3):
         super().__init__()
         self.backbone = AutoModel.from_pretrained("intfloat/multilingual-e5-base")

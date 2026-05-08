@@ -1,16 +1,20 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from transformers import AutoTokenizer
-import torch, os, json
+import torch, json
+from config import RAW_DATA, processed_path
+
+MODEL_DIR = processed_path("bge-m3")
 
 def drop_nan(data : pd.DataFrame):
     data.dropna(subset=["phrase", "intent"], inplace=True)
     return data
-
-
-def class_balance(data):
-    pass
+    
 
 def LabelEnconding(data):
     le = LabelEncoder()
@@ -20,10 +24,9 @@ def LabelEnconding(data):
     return data, le
 
 
-def tokenize_save(tokenizer, X, y, path, max_length=64):
-    texts = ("query: " + X["phrase"].astype(str)).tolist()
+def tokenize_save(tokenizer, X, y, path, max_length=32):
     enc = tokenizer(
-        texts,
+        X["phrase"].tolist(),
         padding="max_length",
         truncation=True,
         max_length=max_length,
@@ -36,7 +39,7 @@ def tokenize_save(tokenizer, X, y, path, max_length=64):
     }, path)
 
 def main():
-    data = pd.read_csv("samples/multilingual_data.csv")
+    data = pd.read_csv(RAW_DATA)
     data = drop_nan(data)
     data_enc, le = LabelEnconding(data)
     y = data_enc["intent"]
@@ -44,17 +47,16 @@ def main():
     X_train, X_1, y_train, y_1 = train_test_split(X, y, train_size=0.8, random_state=42, shuffle=True, stratify=y)
     X_val, X_test, y_val, y_test = train_test_split(X_1, y_1, train_size=0.5, random_state=42, shuffle=True, stratify=y_1)
     label_map = {int(i): cls for i, cls in enumerate(le.classes_)}
-    os.makedirs("data/processed", exist_ok=True)
-    
-    with open("data/processed/label_map.json", "w", encoding="utf-8") as f:
+    MODEL_DIR.mkdir(parents=True, exist_ok=True)
+
+    with open(MODEL_DIR / "label_map.json", "w", encoding="utf-8") as f:
         json.dump(label_map, f, ensure_ascii=False, indent=2)
 
-    tokenizer = AutoTokenizer.from_pretrained("intfloat/multilingual-e5-large")
+    tokenizer = AutoTokenizer.from_pretrained("BAAI/bge-m3")
 
-
-    tokenize_save(tokenizer, X_train, y_train, "data/large_train.pt")
-    tokenize_save(tokenizer, X_val, y_val, "data/large_val.pt")
-    tokenize_save(tokenizer, X_test, y_test, "data/large_test.pt")
+    tokenize_save(tokenizer, X_train, y_train, MODEL_DIR / "train.pt")
+    tokenize_save(tokenizer, X_val, y_val, MODEL_DIR / "val.pt")
+    tokenize_save(tokenizer, X_test, y_test, MODEL_DIR / "test.pt")
 
 
 

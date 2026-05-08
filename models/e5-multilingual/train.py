@@ -1,8 +1,12 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
 import torch
 import numpy as np
 from model import TextCNN
 from dataloader import build_dataloader
-from sklearn.utils.class_weight import compute_class_weight
+from config import processed_path
 
 
 def train_epoch(model, loader, optimizer, criterion, DEVICE):
@@ -11,14 +15,15 @@ def train_epoch(model, loader, optimizer, criterion, DEVICE):
     for batch in loader:
         input_ids = batch["input_ids"].to(DEVICE)
         attention_mask = batch["attention_mask"].to(DEVICE)
-        label = batch["label"].to(DEVICE)
+        label = batch["label"].to(DEVICE).long()
 
+        optimizer.zero_grad(set_to_none=True)
 
-        optimizer.zero_grad()
-        logits, _ = model(input_ids, attention_mask)
-        loss = criterion(logits, label)
+        with torch.autocast(device_type="cuda", dtype=torch.bfloat16):
+            logits, _ = model(input_ids, attention_mask)
+            loss = criterion(logits, label)
+
         mean_loss.append(loss.item())
-
         loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
         optimizer.step()
@@ -31,7 +36,8 @@ def eval_epoch(model, loader, criterion, DEVICE):
     for batch in loader:
         input_ids = batch["input_ids"].to(DEVICE)
         attention_mask = batch["attention_mask"].to(DEVICE)
-        label = batch["label"].to(DEVICE)
+        label = batch["label"].to(DEVICE).long()
+
         with torch.no_grad():
             logits, _ = model(input_ids, attention_mask)
             loss = criterion(logits, label)
@@ -43,12 +49,13 @@ def eval_epoch(model, loader, criterion, DEVICE):
 
 
 def main():
-    DEVICE = "mps" if torch.backends.mps.is_available() else "cpu"
-    EPOCHS = 20
-    LR_HEAD = 2e-4
+    DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+    EPOCHS = 10
+
+    LR_HEAD = 3e-4
     LR_BACKBONE = 5e-6
 
-    train_dl, val_dl, _ = build_dataloader("data/processed")
+    train_dl, val_dl, _ = build_dataloader(processed_path("e5-multilingual"))
 
     model = TextCNN().to(DEVICE)
 
@@ -60,9 +67,9 @@ def main():
     ])
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer=optimizer, T_max=EPOCHS)
 
-    criterion = torch.nn.CrossEntropyLoss()
+    criterion = torch.nn.CrossEntropyLoss(label_smoothing=0.05)
     best_val_loss = float("inf")
-    patience = 2
+    patience = 3
     no_improve = 0
 
     for epoch in range(EPOCHS):
@@ -74,7 +81,7 @@ def main():
         if best_val_loss > val_loss:
             best_val_loss = val_loss
             no_improve = 0
-            torch.save(model.state_dict(), "data/best_model_multilingual.pt")
+            torch.save(model.state_dict(), "data/best_models/e5-multilingual/model.pt")
         else:
             no_improve += 1
 
@@ -87,4 +94,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main() 

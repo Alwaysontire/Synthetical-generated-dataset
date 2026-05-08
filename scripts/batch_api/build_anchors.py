@@ -6,7 +6,7 @@ INTENTS = [
     "window_set", "temperature_set", "temperature_change","ac_set", "ac_off", "ac_mode_set", "ac_fan_set", "recirculation_set", "seat_heater_set", "seat_vent_set", "defrost_set",
     "sunroof_open", "sunroof_close",
     # Media Playback
-    "play_music", "stop_music", "media_pause", "next_track", "previous_track", "volume_change", "volume_set", "volume_mute_set", "media_source_set", "media_repeat_set",
+    "play_music", "media_stop", "next_track", "previous_track", "volume_change", "volume_set", "volume_mute_set", "media_source_set", "media_repeat_set",
     "media_shuffle_set", "radio_set", "radio_set_station",
     # Navigation
     "nav_start",
@@ -23,8 +23,7 @@ INTENTS = [
     "seat_memory_recall",
     "steering_wheel_memory_recall",
     # Interior Lighting
-    "ambient_light_set",
-    "ambient_light_color_set",
+    "ambient_light_control",
     "interior_light_set",
     "reading_light_set",
     # Hazard & Indicator Lights

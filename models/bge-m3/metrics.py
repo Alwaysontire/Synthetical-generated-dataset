@@ -27,18 +27,18 @@ def evaluate(model, test_dl, DEVICE):
 
 
 def main():
-    DEVICE = "mps" if torch.backends.mps.is_available() else "cpu"
+    DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-    with open("data/processed/label_map.json", encoding="utf-8") as f:
+    with open("data/processed/bge-m3/label_map.json", encoding="utf-8") as f:
         label_map = json.load(f)
     class_names = [label_map[str(i)] for i in range(len(label_map))]
 
-    _, _, test_dl = build_dataloader("data/processed")
+    test_loader = torch.load("data/processed/bge-m3/test.pt")
 
     model = TextCNN().to(DEVICE)
-    model.load_state_dict(torch.load("vast_project/best_model.pt", map_location=DEVICE))
+    model.load_state_dict(torch.load("data/best_models/bge-m3/model.pt", map_location=DEVICE))
 
-    labels, preds = evaluate(model, test_dl, DEVICE)
+    labels, preds = evaluate(model, test_loader, DEVICE)
 
     acc = (labels == preds).mean()
     p_macro, r_macro, f1_macro, _ = precision_recall_fscore_support(labels, preds, average="macro", zero_division=0)
