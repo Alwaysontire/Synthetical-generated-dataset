@@ -2,7 +2,7 @@ import torch
 import numpy as np
 import json
 from sklearn.metrics import classification_report, precision_recall_fscore_support
-from model import BertModel
+from model import TextCNN
 from dataloader import build_dataloader
 
 
@@ -33,11 +33,11 @@ def main():
         label_map = json.load(f)
     class_names = [label_map[str(i)] for i in range(len(label_map))]
 
-    test_loader = torch.load("data/processed/e5-multilingual/test.pt")
+    _, _, test_loader = build_dataloader("data/processed/e5-multilingual")
     
 
-    model = BertModel().to(DEVICE)
-    model.load_state_dict(torch.load("data/best_models/e5-multilingual.pt", map_location=DEVICE))
+    model = TextCNN().to(DEVICE)
+    model.load_state_dict(torch.load("data/best_models/e5-multilingual/model.pt", map_location=DEVICE))
 
     labels, preds = evaluate(model, test_loader, DEVICE)
 

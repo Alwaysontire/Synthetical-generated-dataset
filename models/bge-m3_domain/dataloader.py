@@ -7,7 +7,11 @@ class PhraseDataset(Dataset):
         data = torch.load(path, weights_only=True)
         self.input_ids = data["input_ids"]
         self.attention_mask = data["attention_mask"]
+
         self.labels = data["labels"]
+        self.intent_labels = data["intent_labels"]
+        self.domain_labels = data["domain_labels"]
+        self.local_intent_labels = data["local_intent_label"]
 
     def __len__(self):
         return len(self.labels)
@@ -16,11 +20,14 @@ class PhraseDataset(Dataset):
         return {
             "input_ids": self.input_ids[index],
             "attention_mask": self.attention_mask[index],
-            "label": self.labels[index]
+            "label": self.labels[index],
+            "intent_label": self.intent_labels[index],
+            "domain_label": self.domain_labels[index],
+            "local_intent_label": self.local_intent_labels[index]
         }
     
 
-def build_dataloader(processed_dir, batch_size=512, num_workers=0):
+def build_dataloader(processed_dir, batch_size=256, num_workers=0):
     train_ds = PhraseDataset(os.path.join(processed_dir, "train.pt"))
     val_ds = PhraseDataset(os.path.join(processed_dir, "val.pt"))
     test_ds = PhraseDataset(os.path.join(processed_dir, "test.pt"))

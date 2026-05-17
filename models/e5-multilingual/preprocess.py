@@ -40,7 +40,7 @@ def tokenize_save(tokenizer, X, y, path, max_length=32):
 
 def main():
     data = pd.read_csv(RAW_DATA)
-    data = drop_nan(data)
+    data = drop_nan(data)_
     data_enc, le = LabelEnconding(data)
     y = data_enc["intent"]
     X = data_enc[["phrase", "parameters"]]

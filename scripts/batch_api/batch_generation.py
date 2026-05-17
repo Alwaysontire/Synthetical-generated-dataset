@@ -126,7 +126,7 @@ def create_batch_input(cfg: RunConfig) -> int:
                 "body": body
             }
             f.write(json.dumps(line, ensure_ascii=False) + "\n")
-    print(f"Сделано {num_requests} запросов к {cfg.batch_input_path}, всего сделано {total}.")
+    print(f"{num_requests} запросов к {cfg.batch_input_path}, всего {total}.")
     return num_requests
 
 def extract_from_batch(body: dict) -> str:
@@ -195,50 +195,32 @@ def json_to_csv(json_path: str, csv_path: str = None) -> str:
         writer.writeheader()
         writer.writerows(data)
 
-    print(f"\n Конвертировано: {json_path} → {csv_path}")
-    print(f"   Записей: {len(data)}")
-
     return csv_path
 
 
 def run_batch_generation(cfg: RunConfig):
     client = OpenAI(api_key=OPENAI_API_KEY)
 
-    print(f"Создание запроса")
 
     num_requests = create_batch_input(cfg)
 
-    print(f"\n Загрузка файла: {cfg.batch_input_path}")
     upload = client.files.create(file=open(cfg.batch_input_path, "rb"), purpose="batch")
-    print(f"   File ID: {upload.id}")
 
-    print(f"\n Создание batch...")
     batch = client.batches.create(
         input_file_id=upload.id,
         endpoint="/v1/chat/completions",
         completion_window="24h"
     )
-    print(f"   Batch ID: {batch.id}")
-    print(f"   Status: {batch.status}")
-    print(f"   Model: {cfg.model}")
-    print(f"   Total requests: {num_requests}")
-    print(f"\n Ожидание завершения...")
 
     while batch.status not in ("completed", "failed", "cancelled", "expired"):
         time.sleep(30)
         batch = client.batches.retrieve(batch.id)
         print(f"status: {batch.status}, request_counts: {batch.request_counts}")
 
-    print(f"\n Batch завершён: {batch.status}")
-    print(f"  Request counts: {batch.request_counts}")
-    print(f"  Output file ID: {batch.output_file_id}")
-    print(f"  Error file ID: {batch.error_file_id}")
-
     if batch.error_file_id:
         error_content = client.files.content(batch.error_file_id)
         with open("batch_errors.jsonl", "wb") as f:
             f.write(error_content.read())
-        print(f"\n Файл ошибок сохранён: batch_errors.jsonl")
 
         with open("batch_errors.jsonl", "r", encoding="utf-8") as f:
             first_line = f.readline()

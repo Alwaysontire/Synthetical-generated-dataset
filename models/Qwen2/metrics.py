@@ -34,8 +34,8 @@ def main():
         label_map = json.load(f)
     class_names = [label_map[str(i)] for i in range(len(label_map))]
 
-    test_loader = torch.load("data/processed/qwen2/test.pt")
-    # _, _, test_loader = build_dataloader("data/")
+    
+    _, _, test_loader = build_dataloader("data/processed/qwen2")
 
     model = BertModel().to(DEVICE)
     model.load_state_dict(torch.load("data/best_models/qwen2/model.pt", map_location=DEVICE))

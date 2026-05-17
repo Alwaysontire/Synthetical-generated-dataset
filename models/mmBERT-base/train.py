@@ -73,7 +73,7 @@ def main():
     optimizer = torch.optim.AdamW([{"params": model.backbone.parameters(), "lr" : LR_BERT},
                                    {"params": model.classification.parameters(), "lr": LR_HEAD}])
     
-    train_loader, val_loader, test_loader = build_dataloader(processed_path("mmBERT"))
+    train_loader, val_loader, test_loader = build_dataloader(processed_path("mmBERT-base"))
     total_steps = EPOCHS * len(train_loader)
     warmup_steps = int(0.06 * total_steps)
     
@@ -110,7 +110,7 @@ def main():
         if best_val_acc < val_acc:
             best_val_acc = val_acc
             patience_counter = 0
-            torch.save(model.state_dict(), "data/best_models/mmBERT/model.pt")
+            torch.save(model.state_dict(), "data/best_models/mmBERT-base/model.pt")
         else:
             patience_counter += 1
 

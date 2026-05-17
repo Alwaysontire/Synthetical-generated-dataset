@@ -1,12 +1,11 @@
 import torch.nn as nn
 from transformers import AutoModel
 import torch
-import bitsandbytes as bnb
 from peft import get_peft_model, LoraConfig
 
 
 class BertModel(nn.Module):
-    def __init__(self, num_classes=82, embedding_dim=256):
+    def __init__(self, num_classes=64, embedding_dim=256):
         super().__init__()
 
         self.backbone = AutoModel.from_pretrained(

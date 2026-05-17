@@ -9,3 +9,6 @@ transformers
 torch
 sacrebleu
 pydantic
+Pillow
+gradio
+peft

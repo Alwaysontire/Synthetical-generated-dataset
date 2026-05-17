@@ -199,7 +199,7 @@ def create_batch_input_rare(cfg: RunConfig) -> int:
             }
             f.write(json.dumps(line, ensure_ascii=False) + "\n")
 
-    print(f"Создано {num_requests} запросов → {cfg.batch_input_path}, целевых примеров: {total}")
+    print(f" {num_requests} запросов → {cfg.batch_input_path}, примеров: {total}")
     return num_requests
 
 
@@ -225,29 +225,21 @@ def extract_from_batch(body: dict) -> str:
 def run_batch_generation_rare(cfg: RunConfig):
     client = OpenAI(api_key=OPENAI_API_KEY)
 
-    print("Создание запроса для редких классов...")
     num_requests = create_batch_input_rare(cfg)
 
-    print(f"\nЗагрузка файла: {cfg.batch_input_path}")
     upload = client.files.create(file=open(cfg.batch_input_path, "rb"), purpose="batch")
-    print(f"  File ID: {upload.id}")
 
-    print(f"\nСоздание batch...")
+
     batch = client.batches.create(
         input_file_id=upload.id,
         endpoint="/v1/chat/completions",
         completion_window="24h"
     )
-    print(f"  Batch ID: {batch.id}")
-    print(f"  Status: {batch.status}")
-
-    print(f"\nОжидание завершения...")
     while batch.status not in ("completed", "failed", "cancelled", "expired"):
         time.sleep(30)
         batch = client.batches.retrieve(batch.id)
         print(f"  status: {batch.status}, request_counts: {batch.request_counts}")
 
-    print(f"\nBatch завершён: {batch.status}")
 
     if batch.status != "completed":
         raise RuntimeError(f"Batch ended with status={batch.status}")
@@ -330,7 +322,7 @@ def run_batch_generation_rare(cfg: RunConfig):
     print(f"Уникальных собрано: {len(collected)} и сохранено: {len(final)}")
     print(f"Распределение по интентам: {json.dumps(intent_counts, ensure_ascii=False)}")
     print(f"JSON: {cfg.out_path}")
-    print(f"CSV:  {csv_path}")
+    print(f"CSV: {csv_path}")
 
 
 if __name__ == "__main__":

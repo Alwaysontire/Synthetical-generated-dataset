@@ -58,7 +58,7 @@ def Semantic_diversity(embeddings, index) -> float:
 
 
 def main():
-    dataframe = pd.read_csv("samples/car_voice_assistant_multilingual_200k.csv")
+    dataframe = pd.read_csv("samples/new_data.csv")
     model = SentenceTransformer("intfloat/multilingual-e5-small")
     embeddings = model.encode(dataframe["phrase"].tolist(), normalize_embeddings=True, batch_size=256, show_progress_bar=True)
     

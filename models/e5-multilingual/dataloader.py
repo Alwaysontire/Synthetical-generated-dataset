@@ -22,7 +22,7 @@ class PhraseDataset(Dataset):
         }
     
 
-def build_dataloader(processed_dir, batch_size=128, num_workers=4):
+def build_dataloader(processed_dir, batch_size=512, num_workers=4):
     train_ds = PhraseDataset(os.path.join(processed_dir, "train.pt"))
     val_ds = PhraseDataset(os.path.join(processed_dir, "val.pt"))
     test_ds = PhraseDataset(os.path.join(processed_dir, "test.pt"))
