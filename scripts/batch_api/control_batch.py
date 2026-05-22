@@ -144,7 +144,6 @@ class Batch_Norm:
             writer.writerows(self.dataset)
 
     def _save_dataset_json(self, path: str):
-        """Сохранение датасета в JSON формате"""
         with open(path, 'w', encoding='utf-8') as f:
             json.dump(self.dataset, f, ensure_ascii=False, indent=2)
 
@@ -165,6 +164,7 @@ def main():
     parser = argparse.ArgumentParser(
         description='Дедупликация и балансировка датасета для голосового ассистента',
         formatter_class=argparse.RawDescriptionHelpFormatter
+    )
 
     parser.add_argument(
         'dataset',
@@ -202,7 +202,7 @@ def main():
 
     processor.print_summary()
 
-    print(f"\n Обработка завершена успешно!")
+    print(f"\n Обработка завршена")
 
 
 if __name__ == "__main__":

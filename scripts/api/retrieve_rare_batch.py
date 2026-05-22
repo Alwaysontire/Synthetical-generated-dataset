@@ -38,13 +38,13 @@ def main():
     print(f"Output file ID: {batch.output_file_id}")
 
     if batch.status != "completed":
-        print("Батч ещё не завершён!")
+        print("Батч ещё не завершён")
         return
 
     content = client.files.content(batch.output_file_id)
     with open(OUT_JSONL, "wb") as f:
         f.write(content.read())
-    print(f"Скачано → {OUT_JSONL}")
+    print(f"Скачано в {OUT_JSONL}")
 
     seen = set()
     collected = []
@@ -105,8 +105,8 @@ def main():
     print(f"\nОшибок: {failed}")
     print(f"Уникальных: {len(collected)}")
     print(f"Распределение: {json.dumps(intent_counts, ensure_ascii=False, indent=2)}")
-    print(f"\nJSON → {OUT_JSON}")
-    print(f"CSV  → {OUT_CSV}")
+    print(f"\nJSON в {OUT_JSON}")
+    print(f"CSV в {OUT_CSV}")
 
 
 if __name__ == "__main__":

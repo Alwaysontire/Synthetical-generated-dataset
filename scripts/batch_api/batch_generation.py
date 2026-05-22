@@ -224,10 +224,6 @@ def run_batch_generation(cfg: RunConfig):
 
         with open("batch_errors.jsonl", "r", encoding="utf-8") as f:
             first_line = f.readline()
-            if first_line:
-                error_obj = json.loads(first_line)
-                print(f"\n Пример ошибки:")
-                print(json.dumps(error_obj.get("error", {}), ensure_ascii=False, indent=2))
 
     if batch.status != "completed":
         raise RuntimeError(f"Batch ended with status={batch.status}")
@@ -316,14 +312,14 @@ def run_batch_generation(cfg: RunConfig):
     with open(cfg.out_path, "w", encoding="utf-8") as f:
         json.dump(final, f, ensure_ascii=False, indent=2)
     
-    print(f"Количество ошибок - {failed_rows}")
-    print(f"Уникальных собрано: {len(collected)}; Всего сохранено: {len(final)} -> {cfg.out_path}")
+    print(f"Количество ошибок: {failed_rows}")
+    print(f"Уникальных собрано: {len(collected)}; Всего сохранено: {len(final)} в {cfg.out_path}")
 
     metric = metrics(final)
     print("Метрики:", json.dumps(metric, ensure_ascii=False, indent=2))
 
     csv_path = json_to_csv(cfg.out_path)
-    print(f"\n Готово! CSV файл: {csv_path}")
+    print(f"\n CSV файл: {csv_path}")
 
 
 if __name__ == "__main__":

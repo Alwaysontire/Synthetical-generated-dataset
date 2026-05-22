@@ -76,7 +76,6 @@ synt_gen/
 |-------|----------|------|-------|
 | `e5-multilingual` | `intfloat/multilingual-e5-base` | Mean + TextCNN | Input prefixed with `query: ` |
 | `bge-m3` | `BAAI/bge-m3` | CLS + Mean + Max pooling | Strong multilingual encoder |
-| `bge-m3_domain` | `BAAI/bge-m3` | Hierarchical: domain → intent | Two-stage prediction |
 | `Qwen2` | `Alibaba-NLP/gte-Qwen2-7B-instruct` | Last token + LoRA r=16 | Decoder-based, largest model |
 | `mmBERT-base` | `jhu-clsp/mmBERT-base` | CLS + Mean + Max pooling | Compact multilingual BERT |
 
@@ -101,7 +100,7 @@ python models/bge-m3/train.py
 python models/bge-m3/metrics.py
 ```
 
-Each model has its own `preprocess.py` / `train.py` / `metrics.py`. The `bge-m3_domain` variant reads from `samples/domain_data.csv` (includes the `domain` column).
+Each model has its own `preprocess.py` / `train.py` / `metrics.py`.
 
 ---
 

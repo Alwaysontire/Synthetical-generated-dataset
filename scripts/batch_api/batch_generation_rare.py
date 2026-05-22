@@ -199,7 +199,7 @@ def create_batch_input_rare(cfg: RunConfig) -> int:
             }
             f.write(json.dumps(line, ensure_ascii=False) + "\n")
 
-    print(f" {num_requests} запросов → {cfg.batch_input_path}, примеров: {total}")
+    print(f" {num_requests} запросов в {cfg.batch_input_path}, примеров: {total}")
     return num_requests
 
 
@@ -238,7 +238,7 @@ def run_batch_generation_rare(cfg: RunConfig):
     while batch.status not in ("completed", "failed", "cancelled", "expired"):
         time.sleep(30)
         batch = client.batches.retrieve(batch.id)
-        print(f"  status: {batch.status}, request_counts: {batch.request_counts}")
+        print(f"status: {batch.status}, request_counts: {batch.request_counts}")
 
 
     if batch.status != "completed":
@@ -321,8 +321,8 @@ def run_batch_generation_rare(cfg: RunConfig):
 
     print(f"Уникальных собрано: {len(collected)} и сохранено: {len(final)}")
     print(f"Распределение по интентам: {json.dumps(intent_counts, ensure_ascii=False)}")
-    print(f"JSON: {cfg.out_path}")
-    print(f"CSV: {csv_path}")
+    print(f"JSON в: {cfg.out_path}")
+    print(f"CSV в: {csv_path}")
 
 
 if __name__ == "__main__":

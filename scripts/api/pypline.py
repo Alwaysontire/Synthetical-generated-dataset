@@ -164,17 +164,16 @@ def generate_dataset(n: int,  model: str ="gpt-5-mini", temperature: float = 1.3
                     seen_phrases.add(phrase_norm)
                     results.append(item)
                     if len(results) % 100 == 0:
-                        print(f"✓ Added [{len(results)}/{n}]: {item.intent} - {item.phrase[:50]}")
+                        print(f"Added [{len(results)}/{n}]: {item.intent} - {item.phrase[:50]}")
 
                 except Exception as e:
-                    print(f"⚠ Error parsing item: {e}")
+                    print(f"Error parsing item: {e}")
                     continue
 
         except Exception as e:
-            print(f"⚠ API call failed (attempt {attempt}): {e}")
+            print(f"API call failed (attempt {attempt}): {e}")
             if attempt >= max_tries:
-                print(f"❌ Max retries reached, continuing with {len(results)} items")
-            time.sleep(1)  
+                print(f"Max retries reached, continuing with {len(results)} items")
             continue
 
     return results
